@@ -1,0 +1,148 @@
+.header-anchor {
+  position: relative;
+  height: 12px;
+}
+
+.header {
+  height: 92px;
+  position: sticky;
+  z-index: 100;
+  top: var(--wp-admin--admin-bar--height, 0px);
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: -12px;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(22, 22, 22, 0.949);
+  opacity: 0;
+  backdrop-filter: blur(8px);
+  transition: 0.3s;
+}
+
+.header[data-sticky-header='active']::before {
+  opacity: 1;
+}
+
+.header-layout {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.header-logo {
+  width: 92px;
+  height: 92px;
+  background: url('../images/logo-dark.png') no-repeat 50% 50%;
+  background-size: cover;
+  display: block;
+  flex-shrink: 0;
+}
+
+.page-template-home .header-logo,
+[data-sticky-header='active'] .header-logo {
+  background-image: url('../images/logo-light.png');
+  transition: 0.3s;
+}
+
+.header-nav {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header-nav li {
+}
+
+.header-nav li a {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  font-size: 20px;
+  line-height: 1;
+  color: #000;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+.page-template-home .header-nav li a,
+[data-sticky-header='active'] .header-nav li a {
+  color: #fff;
+  transition: 0.3s;
+}
+
+.header-nav li a:hover {
+  color: #2b2b2b;
+}
+
+.page-template-home .header-nav li a:hover,
+[data-sticky-header='active'] .header-nav li a:hover {
+  color: #bfbfbf;
+}
+
+.header-phone {
+  text-align: right;
+  line-height: 1;
+  color: #000;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.page-template-home .header-phone,
+[data-sticky-header='active'] .header-phone {
+  color: #fff;
+  transition: 0.3s;
+}
+
+.header-phone__number {
+  font-size: 24px;
+  letter-spacing: 0.06em;
+  font-weight: bold;
+}
+
+.header-phone__time {
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  margin-top: 5px;
+}
+
+.header-callback {
+  font-size: 22px;
+  line-height: 1;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 64px;
+  border-radius: 24px;
+  background: #000;
+  border: none;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.page-template-home .header-callback,
+[data-sticky-header='active'] .header-callback {
+  background: #fff;
+  color: #000;
+  transition: 0.3s;
+}
+
+.header-callback:hover {
+  background: #cccccc;
+  color: #272634;
+}
+
+.header-toggle {
+  display: none;
+}

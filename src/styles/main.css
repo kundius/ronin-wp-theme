@@ -1,0 +1,290 @@
+:root {
+  --container-width: 100%;
+  --container-padding: 12px;
+  --container-content: calc(var(--container-width) - (var(--container-padding) * 2));
+
+  @media (--min-md) {
+    --container-width: 768px;
+    --container-padding: 16px;
+  }
+
+  @media (--min-lg) {
+    --container-width: 1024px;
+    --container-padding: 16px;
+  }
+
+  @media (--min-xl) {
+    --container-width: 1280px;
+    --container-padding: 24px;
+  }
+
+  @media (--min-2xl) {
+    --container-width: 1536px;
+    --container-padding: 32px;
+  }
+
+  @media (--min-3xl) {
+    --container-width: 1792px;
+    --container-padding: 32px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #wpadminbar {
+    position: fixed;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.2;
+  font-size: 16px;
+  background: #fff;
+}
+
+.breadcrumbs {
+  font-size: 14px;
+  line-height: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 48px 0;
+  list-style: none;
+
+  @media (--max-md) {
+    font-size: 12px;
+    line-height: 20px;
+    margin-top: 36px;
+    margin-bottom: 36px;
+  }
+}
+
+.breadcrumbs__link {
+  color: #bfbfbf;
+  text-decoration: none;
+}
+
+.breadcrumbs__link:hover {
+  color: #6e6e6e;
+}
+
+.breadcrumbs__text {
+  color: #6e6e6e;
+}
+
+.breadcrumbs__item {
+  margin-right: 1.5em;
+}
+
+.breadcrumbs__item + .breadcrumbs__item {
+  padding-left: 1.5em;
+  position: relative;
+}
+
+.breadcrumbs__item + .breadcrumbs__item::before {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 1.2em;
+  background: #6e6e6e;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.page-title {
+  margin: 48px 0;
+  font-size: 48px;
+  line-height: 1.25;
+  color: #000000;
+  font-weight: 400;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 50;
+
+  @media (--max-md) {
+    font-size: 36px;
+    margin-top: 36px;
+    margin-bottom: 36px;
+  }
+}
+
+.page-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - var(--wp-admin--admin-bar--height, 0px));
+}
+
+.page-layout__body {
+  flex-grow: 1;
+}
+
+.page-content {
+  font-size: 20px;
+  line-height: 1.2;
+  margin: 48px 0;
+
+  @media (--max-lg) {
+    font-size: 18px;
+  }
+
+  @media (--max-md) {
+    font-size: 16px;
+    margin-top: 36px;
+    margin-bottom: 36px;
+  }
+}
+
+.page-content a {
+  color: inherit;
+}
+
+.page-content p {
+  margin: 0;
+}
+
+.page-content * + p {
+  margin-top: 1.5em;
+}
+
+.page-content ul {
+  margin: 0;
+}
+
+.page-content * + ul {
+  margin-top: 1.5em;
+}
+
+.page-content h2 {
+  margin: 0;
+  font-weight: 500;
+}
+
+.page-content * + h2 {
+  margin-top: 1.5em;
+}
+
+.page-content h3 {
+  margin: 0;
+  font-weight: 500;
+}
+
+.page-content * + h3 {
+  margin-top: 1.5em;
+}
+
+.page-content .wp-block-quote {
+  margin: 0;
+}
+
+.page-content * + .wp-block-quote {
+  margin-top: 1.5em;
+}
+
+.page-content .wp-block-slideshow {
+  margin: 0;
+}
+
+.page-content * + .wp-block-slideshow {
+  margin-top: 1.5em;
+}
+
+.page-content .wp-block-image {
+  margin: 0;
+}
+
+.page-content * + .wp-block-image {
+  margin-top: 1.5em;
+}
+
+.page-content .wp-block-columns {
+  margin: 0;
+}
+
+.page-content * + .wp-block-columns {
+  margin-top: 1.5em;
+}
+
+.page-content .wp-block-gallery {
+  margin: 0;
+}
+
+.page-content * + .wp-block-gallery {
+  margin-top: 1.5em;
+}
+
+.page-content .wp-block-buttons {
+  margin: 0;
+}
+
+.page-content * + .wp-block-buttons {
+  margin-top: 1.5em;
+}
+
+.input-field {
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
+.input-field__label {
+  font-size: 12px;
+  line-height: 1;
+  color: #949494;
+  position: absolute;
+  left: 12px;
+  top: 10px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.input-field__input {
+  padding: 20px 12px 0;
+  font-size: 20px;
+  color: #000;
+  line-height: 1;
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  height: 52px;
+  display: block;
+  width: 100%;
+  border: none;
+  position: relative;
+  z-index: 1;
+}
+
+.modal .input-field__input {
+  background: #f5f5f5;
+}
+
+.input-field__textarea {
+  padding: 24px 12px 8px;
+  font-size: 20px;
+  color: #000;
+  line-height: 1;
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  max-width: 100%;
+  display: block;
+  width: 100%;
+  border: none;
+}
+
+.container {
+  max-width: 100%;
+  width: var(--container-width);
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+  margin-left: auto;
+  margin-right: auto;
+}
