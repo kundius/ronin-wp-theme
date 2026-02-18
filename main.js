@@ -11,21 +11,15 @@ import fslightbox from 'fslightbox'
 import { Mask, MaskInput } from 'maska'
 
 import { initStickyHeader } from './src/scripts/sticky-header'
-import { initServices } from './src/scripts/services'
-import { initReviewsEmbla } from './src/scripts/reviews'
-import { initNewsEmbla } from './src/scripts/news'
 import { initMobileMenu } from './src/scripts/mobile-menu'
-import { initSlideshow } from './src/scripts/slideshow'
+import { initActivityEmbla } from './src/scripts/activity-embla'
 import { initCallbackButton } from './src/scripts/callback-button'
 import { initFeedbackForm } from './src/scripts/feedback-form'
 
 new MaskInput('[data-maska]')
 
 initStickyHeader()
-initServices()
-initReviewsEmbla()
-initNewsEmbla()
 initMobileMenu()
-initSlideshow()
+initActivityEmbla()
 initCallbackButton()
 initFeedbackForm()

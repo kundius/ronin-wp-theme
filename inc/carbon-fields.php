@@ -46,6 +46,22 @@ function register_carbon_fields_blocks()
 
   Container::make('theme_options', 'Параметры')
     ->add_tab('Общее', [
+      Field::make('association', 'crb_theme_privacy_policy_page', 'Страница Политика конфиденциальности')
+        ->set_types([
+          [
+            'type' => 'post',
+            'post_type' => 'page',
+          ]
+        ])
+        ->set_max(1),
+      Field::make('association', 'crb_theme_user_agreement_page', 'Страница Пользовательское соглашение')
+        ->set_types([
+          [
+            'type' => 'post',
+            'post_type' => 'page',
+          ]
+        ])
+        ->set_max(1),
       Field::make('text', 'crb_theme_phone_number', 'Телефон / Номер'),
       Field::make('text', 'crb_theme_phone_time', 'Телефон / Время работы'),
       Field::make('text', 'crb_theme_email', 'E-mail'),
@@ -83,6 +99,21 @@ function register_carbon_fields_blocks()
       Field::make('textarea', 'schedule_desc', 'Описание')->set_rows(2),
       Field::make('text', 'schedule_button_text', 'Кнопка / Текст'),
       Field::make('text', 'schedule_button_link', 'Кнопка / Ссылка'),
+    ])
+    ->add_tab('Направления', [
+      Field::make('rich_text', 'directions_content', 'Описание'),
+      Field::make('textarea', 'directions_form_title', 'Заголовок формы')->set_rows(4),
+      Field::make('complex', 'directions_items', 'Список')->add_fields([
+        Field::make('image', 'image', 'Картинка'),
+        Field::make('textarea', 'title', 'Заголовок')->set_rows(4),
+        Field::make('text', 'url', 'Ссылка'),
+      ]),
+    ])
+    ->add_tab('О клубе', [
+      Field::make('textarea', 'about_title', 'Заголовок')->set_rows(2),
+      Field::make('rich_text', 'about_desc', 'Описание'),
+      Field::make('image', 'about_photo', 'Фото'),
+      Field::make('text', 'about_url', 'Ссылка на подробнее'),
     ]);
 
   Container::make('post_meta', 'Контакты')
@@ -97,102 +128,107 @@ function register_carbon_fields_blocks()
       Field::make('textarea', 'map_code', 'Код карты')->set_rows(4),
     ]);
 
-  Container::make('post_meta', 'Отзыв')
-    ->where('post_type', '=', 'review')
+  Container::make('post_meta', 'Фотоотчёт')
+    ->where('post_type', '=', 'photo_report')
     ->add_fields([
-      Field::make('textarea', 'introtext', 'Краткое описание')->set_rows(2),
-      Field::make('checkbox', 'at_home', 'На главную'),
+      Field::make('media_gallery', 'gallery', 'Фотогалерея'),
     ]);
 
-  Block::make('partials_services', 'Блок "Выбирайте отдых для себя"')
+  Container::make('post_meta', 'Видеоотчёт')
+    ->where('post_type', '=', 'video_report')
     ->add_fields([
-      Field::make('separator', 'separator', 'Блок "Выбирайте отдых для себя"'),
-    ])
-    ->set_category('layout')
-    ->set_mode('edit')
-    ->set_icon('shortcode')
-    ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
-      get_template_part('partials/services', null, [
-        'fields' => $fields,
-        'attributes' => $attributes,
-        'inner_blocks' => $inner_blocks,
-      ]);
-    });
+      Field::make('text', 'video', 'Видео'),
+    ]);
 
-  Block::make('partials_news', 'Блок "Новости"')
-    ->add_fields([
-      Field::make('separator', 'separator', 'Блок "Новости"'),
-    ])
-    ->set_category('layout')
-    ->set_mode('edit')
-    ->set_icon('shortcode')
-    ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
-      get_template_part('partials/news', null, [
-        'fields' => $fields,
-        'attributes' => $attributes,
-        'inner_blocks' => $inner_blocks,
-      ]);
-    });
+  // Block::make('partials_services', 'Блок "Выбирайте отдых для себя"')
+  //   ->add_fields([
+  //     Field::make('separator', 'separator', 'Блок "Выбирайте отдых для себя"'),
+  //   ])
+  //   ->set_category('layout')
+  //   ->set_mode('edit')
+  //   ->set_icon('shortcode')
+  //   ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+  //     get_template_part('partials/services', null, [
+  //       'fields' => $fields,
+  //       'attributes' => $attributes,
+  //       'inner_blocks' => $inner_blocks,
+  //     ]);
+  //   });
 
-  Block::make('partials_reviews', 'Блок "Люди говорят о нас"')
-    ->add_fields([
-      Field::make('separator', 'separator', 'Блок "Люди говорят о нас"'),
-    ])
-    ->set_category('layout')
-    ->set_mode('edit')
-    ->set_icon('shortcode')
-    ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
-      get_template_part('partials/reviews', null, [
-        'fields' => $fields,
-        'attributes' => $attributes,
-        'inner_blocks' => $inner_blocks,
-      ]);
-    });
+  // Block::make('partials_news', 'Блок "Новости"')
+  //   ->add_fields([
+  //     Field::make('separator', 'separator', 'Блок "Новости"'),
+  //   ])
+  //   ->set_category('layout')
+  //   ->set_mode('edit')
+  //   ->set_icon('shortcode')
+  //   ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+  //     get_template_part('partials/news', null, [
+  //       'fields' => $fields,
+  //       'attributes' => $attributes,
+  //       'inner_blocks' => $inner_blocks,
+  //     ]);
+  //   });
 
-  Block::make('partials_offer', 'Блок "Предложение"')
-    ->add_fields([
-      Field::make('separator', 'separator', 'Блок "Предложение"'),
-      Field::make('media_gallery', 'gallery', 'Фотогалерея'),
-      Field::make('complex', 'items', 'Элементы')
-        ->set_layout('tabbed-horizontal')->add_fields([
-          Field::make('textarea', 'title', 'Название')->set_rows(2),
-          Field::make('rich_text', 'content', 'Описание'),
-          Field::make('text', 'price', 'Цена')->set_width(50),
-          Field::make('text', 'unit', 'Ед. измерения')->set_width(50),
-          Field::make('text', 'button_text', 'Текст кнопки')->set_width(50),
-          Field::make('text', 'button_link', 'Ссылка кнопки')->set_width(50),
-        ])
-        ->set_header_template('
-            <% if (title) { %>
-                <%- title %> <%- price ? "(" + price + ")" : "" %>
-            <% } %>
-        '),
-    ])
-    ->set_category('layout')
-    ->set_mode('edit')
-    ->set_icon('shortcode')
-    ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
-      get_template_part('partials/offer', null, [
-        'fields' => $fields,
-        'attributes' => $attributes,
-        'inner_blocks' => $inner_blocks,
-      ]);
-    });
+  // Block::make('partials_reviews', 'Блок "Люди говорят о нас"')
+  //   ->add_fields([
+  //     Field::make('separator', 'separator', 'Блок "Люди говорят о нас"'),
+  //   ])
+  //   ->set_category('layout')
+  //   ->set_mode('edit')
+  //   ->set_icon('shortcode')
+  //   ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+  //     get_template_part('partials/reviews', null, [
+  //       'fields' => $fields,
+  //       'attributes' => $attributes,
+  //       'inner_blocks' => $inner_blocks,
+  //     ]);
+  //   });
 
-  Block::make('partials_slidwshow', 'Блок "Слайдшоу"')
-    ->add_fields([
-      Field::make('separator', 'separator', 'Блок "Слайдшоу"'),
-      Field::make('text', 'aspect_ratio', 'Соотношение сторон'),
-      Field::make('media_gallery', 'gallery', 'Фотогалерея'),
-    ])
-    ->set_category('layout')
-    ->set_mode('edit')
-    ->set_icon('shortcode')
-    ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
-      get_template_part('partials/slidwshow', null, [
-        'fields' => $fields,
-        'attributes' => $attributes,
-        'inner_blocks' => $inner_blocks,
-      ]);
-    });
+  // Block::make('partials_offer', 'Блок "Предложение"')
+  //   ->add_fields([
+  //     Field::make('separator', 'separator', 'Блок "Предложение"'),
+  //     Field::make('media_gallery', 'gallery', 'Фотогалерея'),
+  //     Field::make('complex', 'items', 'Элементы')
+  //       ->set_layout('tabbed-horizontal')->add_fields([
+  //         Field::make('textarea', 'title', 'Название')->set_rows(2),
+  //         Field::make('rich_text', 'content', 'Описание'),
+  //         Field::make('text', 'price', 'Цена')->set_width(50),
+  //         Field::make('text', 'unit', 'Ед. измерения')->set_width(50),
+  //         Field::make('text', 'button_text', 'Текст кнопки')->set_width(50),
+  //         Field::make('text', 'button_link', 'Ссылка кнопки')->set_width(50),
+  //       ])
+  //       ->set_header_template('
+  //           <% if (title) { %>
+  //               <%- title %> <%- price ? "(" + price + ")" : "" %>
+  //           <% } %>
+  //       '),
+  //   ])
+  //   ->set_category('layout')
+  //   ->set_mode('edit')
+  //   ->set_icon('shortcode')
+  //   ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+  //     get_template_part('partials/offer', null, [
+  //       'fields' => $fields,
+  //       'attributes' => $attributes,
+  //       'inner_blocks' => $inner_blocks,
+  //     ]);
+  //   });
+
+  // Block::make('partials_slidwshow', 'Блок "Слайдшоу"')
+  //   ->add_fields([
+  //     Field::make('separator', 'separator', 'Блок "Слайдшоу"'),
+  //     Field::make('text', 'aspect_ratio', 'Соотношение сторон'),
+  //     Field::make('media_gallery', 'gallery', 'Фотогалерея'),
+  //   ])
+  //   ->set_category('layout')
+  //   ->set_mode('edit')
+  //   ->set_icon('shortcode')
+  //   ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+  //     get_template_part('partials/slidwshow', null, [
+  //       'fields' => $fields,
+  //       'attributes' => $attributes,
+  //       'inner_blocks' => $inner_blocks,
+  //     ]);
+  //   });
 }
