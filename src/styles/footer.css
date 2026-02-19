@@ -1,0 +1,235 @@
+.footer {
+}
+
+.footer-primary {
+  padding-top: 140px;
+  padding-bottom: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 64px;
+  justify-content: space-between;
+}
+
+.footer-primary__about {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.footer-primary__logo {
+  width: 120px;
+  height: 120px;
+  background: url('../images/logo-dark.png') no-repeat 50% 50%;
+  background-size: cover;
+  display: block;
+  flex-shrink: 0;
+}
+
+.footer-primary__address {
+  font-size: 12px;
+  color: #333;
+  margin-top: 12px;
+}
+
+.footer-primary__contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.footer-primary__messengers {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-primary__phone {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-primary__phone-ico {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  color: #afadad;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 20px;
+}
+
+.footer-primary__phone-val {
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.footer-primary__telegram {
+  border-radius: 24px;
+  background: rgb(0, 163, 223);
+  width: 220px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+.footer-primary__telegram:hover {
+  transform: translateX(5px);
+}
+
+.footer-primary__telegram-ico {
+  font-size: 32px;
+  display: flex;
+  margin-left: -16px;
+}
+
+.footer-primary__telegram-val {
+  font-size: 22px;
+  line-height: 1;
+  font-weight: 500;
+}
+
+.footer-primary__max {
+  border-radius: 24px;
+  background: radial-gradient(
+    136.12% 140.74% at 99.77% 99.04%,
+    #8d28c8 0%,
+    #7c42fa 20%,
+    #007aff 80%,
+    #609ceb 100%
+  );
+  width: 220px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+.footer-primary__max:hover {
+  background: radial-gradient(
+    136.12% 140.74% at 99.77% 99.04%,
+    #8d28c8 0%,
+    #7c42fa 20%,
+    #007aff 80%,
+    #609ceb 100%
+  );
+  transform: translateX(5px);
+}
+
+.footer-primary__max-ico {
+  font-size: 32px;
+  display: flex;
+  margin-left: -16px;
+}
+
+.footer-primary__max-val {
+  font-size: 22px;
+  line-height: 1;
+  font-weight: 500;
+}
+
+.footer-primary__menu {
+}
+
+.footer-primary__menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-primary__menu ul li a {
+  text-decoration: underline;
+  font-size: 14px;
+  color: #000;
+}
+
+.footer-primary__vk-widget {
+  width: 250px;
+  flex-shrink: 0;
+}
+
+.footer-primary__fs-logo {
+  display: block;
+  background: url('../images/fs.png') no-repeat 50% 50%;
+  background-size: cover;
+  width: 178px;
+  height: 178px;
+}
+
+.footer-primary__ending {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+  align-self: stretch;
+}
+
+.footer-primary__links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.footer-primary__links a {
+  text-decoration: underline;
+  color: #575758;
+  font-size: 12px;
+}
+
+.footer-primary__links a:hover {
+  color: #000;
+}
+
+.footer-primary__no-oferta {
+  width: 180px;
+  max-width: 100%;
+  text-align: justify;
+  font-size: 11px;
+}
+
+.footer-secondary {
+  display: flex;
+  border-top: 1px solid #e1e5ee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+}
+
+.footer-secondary__copyright {
+  font-size: 12px;
+  color: rgb(87, 87, 88);
+  line-height: 1.2;
+}
+
+.footer-secondary__sitemap {
+  font-size: 12px;
+  color: rgb(87, 87, 88);
+  line-height: 1.2;
+  text-decoration: underline;
+  display: inline-block;
+}
+
+.footer-secondary__sitemap:hover {
+  color: #000;
+}
+
+.footer-secondary__creator {
+  display: inline-flex;
+}

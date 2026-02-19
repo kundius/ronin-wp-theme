@@ -31,3 +31,16 @@
     </div>
   </div>
 </div>
+
+<div class="float-contacts">
+  <?php if ($crb_theme_social = carbon_get_theme_option('crb_theme_social')): ?>
+    <div class="float-social">
+      <?php foreach ($crb_theme_social as $item): ?>
+        <a href="<?php echo esc_attr($item['url']); ?>" class="float-social__link">
+          <img src="<?php echo esc_attr(wp_get_attachment_image_url($item['icon'], 'full')) ?>" alt="">
+        </a>
+      <?php endforeach; ?>
+    </div>
+  <?php endif; ?>
+  <a href="mailto:<?php echo carbon_get_theme_option('crb_theme_email'); ?>" class="float-email"><?php echo carbon_get_theme_option('crb_theme_email'); ?></a>
+</div>

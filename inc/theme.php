@@ -73,6 +73,16 @@ function create_attachment_from_upload($upload, $post_id = 0)
   return $attachment_id;
 }
 
+function extract_rutube_id($url)
+{
+  $parsed = parse_url($url);
+  if (isset($parsed['host']) && strpos($parsed['host'], 'rutube.ru') !== false) {
+    preg_match('/\/video\/([a-f0-9]+)\//', $parsed['path'], $matches);
+    return isset($matches[1]) ? $matches[1] : null;
+  }
+  return null;
+}
+
 function get_pagination($query)
 {
   $links = paginate_links([

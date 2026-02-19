@@ -146,3 +146,50 @@
 .header-toggle {
   display: none;
 }
+
+.float-contacts {
+  position: absolute;
+  top: 180px;
+  right: calc(((100vw - var(--container-width)) / 2) + var(--container-padding));
+  gap: 40px;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.float-social {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.float-social__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+}
+
+.float-social__link:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.float-social__link img {
+  width: 24px;
+  height: 24px;
+}
+
+.float-email {
+  font-size: 16px;
+  color: #fff;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  font-weight: 500;
+  writing-mode: sideways-lr;
+  white-space: nowrap;
+  text-decoration: none;
+}

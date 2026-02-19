@@ -1,81 +1,101 @@
 <section class="footer">
   <div class="container">
-    <div class="footer-layout">
-      <div class="footer-layout__nav">
+    <div class="footer-primary">
+      <div class="footer-primary__about">
+        <a href="/" class="footer-primary__logo"></a>
+
+        <div class="footer-primary__address">
+          <?php echo carbon_get_theme_option('crb_theme_address'); ?>
+        </div>
+      </div>
+
+      <div class="footer-primary__contacts">
+        <div class="footer-primary__phone">
+          <div class="footer-primary__phone-ico">
+            <span class="icon icon-phone"></span>
+          </div>
+          <div class="footer-primary__phone-val">
+            <?php echo carbon_get_theme_option('crb_theme_phone_number'); ?>
+          </div>
+        </div>
+
+        <div class="footer-primary__messengers">
+          <?php if ($crb_theme_telegram = carbon_get_theme_option('crb_theme_telegram')): ?>
+            <a href="<?php echo esc_attr($crb_theme_telegram); ?>" class="footer-primary__telegram">
+              <span class="footer-primary__telegram-ico">
+                <span class="icon icon-telegram"></span>
+              </span>
+              <span class="footer-primary__telegram-val">
+                Telegram
+              </span>
+            </a>
+          <?php endif; ?>
+
+          <?php if ($crb_theme_telegram = carbon_get_theme_option('crb_theme_max')): ?>
+            <a href="<?php echo esc_attr($crb_theme_telegram); ?>" class="footer-primary__max">
+              <span class="footer-primary__max-ico">
+                <span class="icon icon-max"></span>
+              </span>
+              <span class="footer-primary__max-val">
+                MAX
+              </span>
+            </a>
+          <?php endif; ?>
+        </div>
+      </div>
+
+      <div class="footer-primary__menu">
         <?php wp_nav_menu([
           'menu' => 'Меню в подвале',
           'container' => null,
-          'menu_class' => 'footer-nav',
+          'menu_class' => 'menu-footer',
         ]); ?>
       </div>
-      <div class="footer-layout__contacts">
-        <div class="footer-contacts">
-          <div class="footer-contacts__item">
-            <div class="footer-contacts__item-ico">
-              <span class="icon icon-phone"></span>
-            </div>
-            <div class="footer-contacts__item-val">
-              <?php echo carbon_get_theme_option('crb_theme_phone_number'); ?>
-            </div>
-          </div>
-          <div class="footer-contacts__item">
-            <div class="footer-contacts__item-ico">
-              <span class="icon icon-mail"></span>
-            </div>
-            <div class="footer-contacts__item-val">
-              <?php echo carbon_get_theme_option('crb_theme_email'); ?>
-            </div>
-          </div>
-          <div class="footer-contacts__item footer-contacts__item--address">
-            <div class="footer-contacts__item-ico">
-              <span class="icon icon-marker"></span>
-            </div>
-            <div class="footer-contacts__item-val">
-              <?php echo carbon_get_theme_option('crb_theme_address'); ?>
-            </div>
-          </div>
+
+      <?php if ($footer_widget = carbon_get_theme_option('crb_footer_widget')): ?>
+        <div class="footer-primary__vk-widget">
+          <?php echo $footer_widget; ?>
         </div>
+      <?php endif; ?>
+
+      <div class="footer-primary__fs">
+        <a href="#" class="footer-primary__fs-logo"></a>
       </div>
-      <div class="footer-layout__no-oferta">
-        <div class="footer-no-oferta">
+
+      <div class="footer-primary__ending">
+        <div class="footer-primary__links">
+          <?php
+          $privacy_policy = array_first(carbon_get_theme_option('crb_theme_privacy_policy_page'));
+          $user_agreement = array_first(carbon_get_theme_option('crb_theme_user_agreement_page'));
+          ?>
+          <?php if ($privacy_policy_id = $privacy_policy['id']): ?>
+            <a href="<?php the_permalink($privacy_policy_id); ?>"><?php echo get_the_title($privacy_policy_id); ?></a>
+          <?php endif; ?>
+          <?php if ($user_agreement_id = $user_agreement['id']): ?>
+            <a href="<?php the_permalink($user_agreement_id); ?>"><?php echo get_the_title($user_agreement_id); ?></a>
+          <?php endif; ?>
+        </div>
+
+        <div class="footer-primary__no-oferta">
           <?php echo carbon_get_theme_option('crb_footer_no_oferta'); ?>
         </div>
       </div>
-      <div class="footer-layout__groups">
-        <?php if ($groups = carbon_get_theme_option('crb_footer_groups')): ?>
-          <div class="footer-social">
-            <?php foreach ($groups as $group): ?>
-              <a href="<?php echo $group['link']; ?>" class="footer-social__item" target="_blank">
-                <?php echo $group['icon']; ?>
-              </a>
-            <?php endforeach; ?>
-          </div>
-        <?php endif; ?>
+    </div>
+
+    <div class="footer-secondary">
+      <div class="footer-secondary__copyright">
+        <?php echo nl2br(carbon_get_theme_option('crb_footer_copyright')); ?>
+        <?php echo carbon_get_theme_option('crb_footer_counters'); ?>
       </div>
-      <div class="footer-layout__copyright">
-        <div class="footer-copyright">
-          <?php echo carbon_get_theme_option('crb_footer_copyright'); ?>
-        </div>
-      </div>
-      <div class="footer-layout__sitemap">
-        <a href="/sitemap/" class="footer-link">Карта сайта</a>
-      </div>
-      <div class="footer-layout__privacy-policy">
-        <a href="/privacy-policy/" class="footer-link">Политика конфиденциальности</a>
-      </div>
-      <div class="footer-layout__user-agreement">
-        <a href="/user-agreement/" class="footer-link">Пользовательское соглашение</a>
-      </div>
-      <div class="footer-layout__counters">
-        <div class="footer-counters">
-          <?php echo carbon_get_theme_option('crb_footer_counters'); ?>
-        </div>
-      </div>
-      <div class="footer-layout__creator">
-        <a href="https://domenart-studio.ru/" class="footer-creator" target="_blank">
-          <img src="<?php bloginfo('template_url'); ?>/assets/creator.png" alt="creator" width="138" height="30" />
-        </a>
-      </div>
+      <?php
+      $sitemap = array_first(carbon_get_theme_option('crb_theme_sitemap_page'));
+      ?>
+      <?php if ($sitemap_id = $sitemap['id']): ?>
+        <a href="<?php the_permalink($sitemap_id); ?>" class="footer-secondary__sitemap"><?php echo get_the_title($sitemap_id); ?></a>
+      <?php endif; ?>
+      <a href="https://domenart-studio.ru/" class="footer-secondary__creator" target="_blank">
+        <img src="<?php bloginfo('template_url'); ?>/assets/creator.png" alt="creator" width="138" height="30" />
+      </a>
     </div>
   </div>
 </section>

@@ -62,23 +62,30 @@ function register_carbon_fields_blocks()
           ]
         ])
         ->set_max(1),
+      Field::make('association', 'crb_theme_sitemap_page', 'Страница Карта сайта')
+        ->set_types([
+          [
+            'type' => 'post',
+            'post_type' => 'page',
+          ]
+        ])
+        ->set_max(1),
       Field::make('text', 'crb_theme_phone_number', 'Телефон / Номер'),
       Field::make('text', 'crb_theme_phone_time', 'Телефон / Время работы'),
       Field::make('text', 'crb_theme_email', 'E-mail'),
       Field::make('textarea', 'crb_theme_address', 'Адерс')->set_rows(2),
-      Field::make('complex', 'crb_theme_messengers', 'Мессенджеры')->add_fields([
-        Field::make('text', 'link', 'Ссылка'),
-        Field::make('textarea', 'icon', 'Код иконки')->set_rows(2),
+      Field::make('text', 'crb_theme_telegram', 'Ссылка на телеграм'),
+      Field::make('text', 'crb_theme_max', 'Ссылка на макс'),
+      Field::make('complex', 'crb_theme_social', 'Соцсети')->add_fields([
+        Field::make('text', 'url', 'Ссылка'),
+        Field::make('image', 'icon', 'Картинка'),
       ]),
     ])
     ->add_tab('Подвал', [
       Field::make('textarea', 'crb_footer_no_oferta', 'Не оферта')->set_rows(2),
       Field::make('textarea', 'crb_footer_counters', 'Счетчики')->set_rows(2),
       Field::make('textarea', 'crb_footer_copyright', 'Копирайт')->set_rows(2),
-      Field::make('complex', 'crb_footer_groups', 'Соцсети')->add_fields([
-        Field::make('text', 'link', 'Ссылка'),
-        Field::make('textarea', 'icon', 'Код иконки')->set_rows(2),
-      ]),
+      Field::make('textarea', 'crb_footer_widget', 'Код виджета')->set_rows(4),
     ]);
 
   Container::make('post_meta', 'Главная')
@@ -114,6 +121,14 @@ function register_carbon_fields_blocks()
       Field::make('rich_text', 'about_desc', 'Описание'),
       Field::make('image', 'about_photo', 'Фото'),
       Field::make('text', 'about_url', 'Ссылка на подробнее'),
+    ])
+    ->add_tab('Контакты', [
+      Field::make('textarea', 'contacts_title', 'Заголовок')->set_rows(2),
+      Field::make('complex', 'contacts_list', 'Контакты')->add_fields([
+        Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
+        Field::make('textarea', 'desc', 'Описание')->set_rows(4),
+      ]),
+      Field::make('textarea', 'contacts_map', 'Код карты')->set_rows(2),
     ]);
 
   Container::make('post_meta', 'Контакты')
@@ -131,13 +146,15 @@ function register_carbon_fields_blocks()
   Container::make('post_meta', 'Фотоотчёт')
     ->where('post_type', '=', 'photo_report')
     ->add_fields([
-      Field::make('media_gallery', 'gallery', 'Фотогалерея'),
+      Field::make('media_gallery', 'photos', 'Фото'),
     ]);
 
   Container::make('post_meta', 'Видеоотчёт')
     ->where('post_type', '=', 'video_report')
     ->add_fields([
-      Field::make('text', 'video', 'Видео'),
+      Field::make('complex', 'videos', 'Видео')->add_fields([
+        Field::make('text', 'url', 'Ссылка на Rutube'),
+      ]),
     ]);
 
   // Block::make('partials_services', 'Блок "Выбирайте отдых для себя"')

@@ -319,13 +319,38 @@ $news = new WP_Query([
         </div>
     </section>
 
-    <div class="page-layout__body">
+    <section class="contacts">
       <div class="container">
-        <div class="page-content">
-          <?php the_content(); ?>
+        <div class="contacts__wrapper">
+          <div class="contacts__content">
+            <?php if ($contacts_title = carbon_get_the_post_meta('contacts_title')): ?>
+              <div class="contacts__title">
+                <?php echo nl2br($contacts_title); ?>
+              </div>
+            <?php endif; ?>
+            <?php if ($contacts_list = carbon_get_the_post_meta('contacts_list')): ?>
+              <div class="contacts__list">
+                <?php foreach ($contacts_list as $item): ?>
+                  <div class="contacts__row">
+                    <div class="contacts__row-title">
+                      <?php echo nl2br($item['title']); ?>
+                    </div>
+                    <div class="contacts__row-desc">
+                      <?php echo nl2br($item['desc']); ?>
+                    </div>
+                  </div>
+                <?php endforeach; ?>
+              </div>
+            <?php endif; ?>
+          </div>
+          <?php if ($contacts_map = carbon_get_the_post_meta('contacts_map')): ?>
+            <figure class="contacts__map">
+              <?php echo $contacts_map; ?>
+            </figure>
+          <?php endif; ?>
         </div>
       </div>
-    </div>
+    </section>
 
     <?php get_template_part('partials/footer'); ?>
   </div>
