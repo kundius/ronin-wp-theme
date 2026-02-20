@@ -60,11 +60,13 @@ $news = new WP_Query([
           <?php endif; ?>
           <?php if ($intro_advantages = carbon_get_the_post_meta('intro_advantages')): ?>
             <div class="intro__advantages">
-              <?php foreach ($intro_advantages as $item): ?>
-                <div class="intro__advantage">
-                  <?php echo nl2br($item['content']); ?>
-                </div>
-              <?php endforeach; ?>
+              <div class="advantages-list">
+                <?php foreach ($intro_advantages as $item): ?>
+                  <div class="advantages-list__item">
+                    <?php echo nl2br($item['content']); ?>
+                  </div>
+                <?php endforeach; ?>
+              </div>
             </div>
           <?php endif; ?>
         </div>
@@ -76,6 +78,18 @@ $news = new WP_Query([
         </div>
       <?php endif; ?>
     </section>
+
+    <?php if ($intro_advantages = carbon_get_the_post_meta('intro_advantages')): ?>
+      <div class="mobile-advantages">
+        <div class="advantages-list">
+          <?php foreach ($intro_advantages as $item): ?>
+            <div class="advantages-list__item">
+              <?php echo nl2br($item['content']); ?>
+            </div>
+          <?php endforeach; ?>
+        </div>
+      </div>
+    <?php endif; ?>
 
     <section class="schedule">
       <div class="container">

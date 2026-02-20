@@ -52,6 +52,8 @@
         ]); ?>
       </div>
 
+      <div class="footer-primary__divider-1"></div>
+
       <?php if ($footer_widget = carbon_get_theme_option('crb_footer_widget')): ?>
         <div class="footer-primary__vk-widget">
           <?php echo $footer_widget; ?>
