@@ -86,6 +86,14 @@ function register_carbon_fields_blocks()
       Field::make('textarea', 'crb_footer_counters', 'Счетчики')->set_rows(2),
       Field::make('textarea', 'crb_footer_copyright', 'Копирайт')->set_rows(2),
       Field::make('textarea', 'crb_footer_widget', 'Код виджета')->set_rows(4),
+    ])
+    ->add_tab('Контакты', [
+      Field::make('textarea', 'crb_contacts_title', 'Заголовок')->set_rows(2),
+      Field::make('complex', 'crb_contacts_list', 'Контакты')->add_fields([
+        Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
+        Field::make('textarea', 'desc', 'Описание')->set_rows(4),
+      ]),
+      Field::make('textarea', 'crb_contacts_map', 'Код карты')->set_rows(2),
     ]);
 
   Container::make('post_meta', 'Главная')
@@ -121,14 +129,18 @@ function register_carbon_fields_blocks()
       Field::make('rich_text', 'about_desc', 'Описание'),
       Field::make('image', 'about_photo', 'Фото'),
       Field::make('text', 'about_url', 'Ссылка на подробнее'),
-    ])
-    ->add_tab('Контакты', [
-      Field::make('textarea', 'contacts_title', 'Заголовок')->set_rows(2),
-      Field::make('complex', 'contacts_list', 'Контакты')->add_fields([
+    ]);
+
+  Container::make('post_meta', 'Цены')
+    ->where('post_type', '=', 'page')
+    ->where('post_template', '=', 'templates/prices.php')
+    ->add_fields([
+      Field::make('complex', 'prices', 'Цены')->add_fields([
+        Field::make('text', 'name', 'Название'),
+        Field::make('text', 'price', 'Цена'),
         Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
-        Field::make('textarea', 'desc', 'Описание')->set_rows(4),
+        Field::make('textarea', 'desc', 'Описание')->set_rows(2),
       ]),
-      Field::make('textarea', 'contacts_map', 'Код карты')->set_rows(2),
     ]);
 
   Container::make('post_meta', 'Контакты')
@@ -157,20 +169,26 @@ function register_carbon_fields_blocks()
       ]),
     ]);
 
-  // Block::make('partials_services', 'Блок "Выбирайте отдых для себя"')
-  //   ->add_fields([
-  //     Field::make('separator', 'separator', 'Блок "Выбирайте отдых для себя"'),
-  //   ])
-  //   ->set_category('layout')
-  //   ->set_mode('edit')
-  //   ->set_icon('shortcode')
-  //   ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
-  //     get_template_part('partials/services', null, [
-  //       'fields' => $fields,
-  //       'attributes' => $attributes,
-  //       'inner_blocks' => $inner_blocks,
-  //     ]);
-  //   });
+  Block::make('partials_services', 'Блок "Цены"')
+    ->add_fields([
+      Field::make('separator', 'separator', 'Блок "Цены"'),
+      Field::make('complex', 'prices', 'Цены')->add_fields([
+        Field::make('text', 'name', 'Название'),
+        Field::make('text', 'price', 'Цена'),
+        Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
+        Field::make('textarea', 'desc', 'Описание')->set_rows(2),
+      ]),
+    ])
+    ->set_category('layout')
+    ->set_mode('edit')
+    ->set_icon('shortcode')
+    ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+      get_template_part('partials/prices', null, [
+        'fields' => $fields,
+        'attributes' => $attributes,
+        'inner_blocks' => $inner_blocks,
+      ]);
+    });
 
   // Block::make('partials_news', 'Блок "Новости"')
   //   ->add_fields([

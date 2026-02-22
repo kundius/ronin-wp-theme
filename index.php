@@ -36,6 +36,8 @@
       </div>
     </div>
 
+    <?php get_template_part('partials/contacts'); ?>
+
     <?php get_template_part('partials/footer'); ?>
   </div>
 </body>
