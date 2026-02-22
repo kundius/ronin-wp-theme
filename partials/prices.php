@@ -33,7 +33,7 @@
       <?php endforeach; ?>
     </div>
     <div class="prices__order">
-      <button type="button" class="btn-primary" data-callback-button>Записаться на занятие</button>
+      <button type="button" class="btn-primary" data-callback-button>Записаться на&nbsp;занятие</button>
     </div>
   </div>
 <?php endif; ?>
