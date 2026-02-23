@@ -69,7 +69,7 @@ $next = get_next_post(true);
           </div>
           <?php if (!empty($excerpt) && has_post_thumbnail()): ?>
             <figure class="news-header__figure">
-              <?php the_post_thumbnail('full'); ?>
+              <?php the_post_thumbnail('medium-crop'); ?>
             </figure>
           <?php endif; ?>
         </div>
