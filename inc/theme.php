@@ -96,3 +96,48 @@ function get_pagination($query)
     return '<div class="pagination">' . $links . '</div>';
   }
 }
+
+function trim_by_sentence($text, $limit = 20)
+{
+  // 1. Чистим от тегов для безопасного подсчета слов
+  $clean_text = wp_strip_all_tags($text);
+
+  // 2. Разбиваем на слова (учитываем UTF-8)
+  $words = preg_split('/\s+/u', $clean_text, -1, PREG_SPLIT_NO_EMPTY);
+
+  if (count($words) <= $limit) {
+    return $text; // Текст короче лимита
+  }
+
+  // 3. Берем кусок до лимита
+  $slice = array_slice($words, 0, $limit);
+  $slice_string = implode(' ', $slice);
+
+  // 4. Ищем последний конец предложения в этом куске
+  // Ищем . ! ? ... (учитываем многоточие)
+  if (preg_match('/(.*[.!?…])\s*/u', $slice_string, $matches)) {
+    return $matches[1] . '...';
+  }
+
+  // 5. Если предложений не найдено — режем жестко по словам
+  return $slice_string . '...';
+}
+
+function get_custom_excerpt($limit = 20)
+{
+  // Получаем raw-контент без фильтров и автоматики WP
+  $content = get_post_field('post_content', get_the_ID());
+  $separator = '<!--more-->';
+
+  if (strpos($content, $separator) !== false) {
+    $parts = explode($separator, $content);
+    $preview = $parts[0];
+    // Применяем фильтры, чтобы работали шорткоды, но без логики "more"
+    $preview = apply_filters('the_content', $preview);
+  } else {
+    // Обрезаем по словам (теги удалятся)
+    $preview = trim_by_sentence($content, $limit, '...');
+  }
+
+  return $preview;
+}

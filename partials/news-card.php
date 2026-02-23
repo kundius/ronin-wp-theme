@@ -1,12 +1,3 @@
-<?php
-// $content = get_the_content('');
-// if (strpos($content, '<!--more-->') !== false) {
-//   $parts = explode('<!--more-->', $content);
-//   echo apply_filters('the_content', $parts[0]);
-// } else {
-//   echo wp_trim_words($content, 20, '...');
-// }
-?>
 <article class="news-card">
   <figure class="news-card__figure">
     <?php if (has_post_thumbnail()): ?>
@@ -23,15 +14,7 @@
       <?php the_title(); ?>
     </div>
     <div class="news-card__excerpt">
-      <?php
-      $content = get_the_content('');
-      if (strpos($content, '<!--more-->') !== false) {
-        $parts = explode('<!--more-->', $content);
-        echo apply_filters('the_content', $parts[0]);
-      } else {
-        echo wp_trim_words($content, 20, '...');
-      }
-      ?>
+      <?php echo get_custom_excerpt(60); ?>
     </div>
     <div class="news-card__more">
       <a href="<?php the_permalink(); ?>" class="btn-more">

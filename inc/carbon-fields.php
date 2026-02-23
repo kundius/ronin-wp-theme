@@ -46,30 +46,6 @@ function register_carbon_fields_blocks()
 
   Container::make('theme_options', 'Параметры')
     ->add_tab('Общее', [
-      Field::make('association', 'crb_theme_privacy_policy_page', 'Страница Политика конфиденциальности')
-        ->set_types([
-          [
-            'type' => 'post',
-            'post_type' => 'page',
-          ]
-        ])
-        ->set_max(1),
-      Field::make('association', 'crb_theme_user_agreement_page', 'Страница Пользовательское соглашение')
-        ->set_types([
-          [
-            'type' => 'post',
-            'post_type' => 'page',
-          ]
-        ])
-        ->set_max(1),
-      Field::make('association', 'crb_theme_sitemap_page', 'Страница Карта сайта')
-        ->set_types([
-          [
-            'type' => 'post',
-            'post_type' => 'page',
-          ]
-        ])
-        ->set_max(1),
       Field::make('text', 'crb_theme_phone_number', 'Телефон / Номер'),
       Field::make('text', 'crb_theme_phone_time', 'Телефон / Время работы'),
       Field::make('text', 'crb_theme_email', 'E-mail'),
@@ -94,6 +70,32 @@ function register_carbon_fields_blocks()
         Field::make('textarea', 'desc', 'Описание')->set_rows(4),
       ]),
       Field::make('textarea', 'crb_contacts_map', 'Код карты')->set_rows(2),
+    ])
+    ->add_tab('Страницы', [
+      Field::make('association', 'crb_theme_privacy_policy_page', 'Страница Политика конфиденциальности')
+        ->set_types([
+          [
+            'type' => 'post',
+            'post_type' => 'page',
+          ]
+        ])
+        ->set_max(1),
+      Field::make('association', 'crb_theme_user_agreement_page', 'Страница Пользовательское соглашение')
+        ->set_types([
+          [
+            'type' => 'post',
+            'post_type' => 'page',
+          ]
+        ])
+        ->set_max(1),
+      Field::make('association', 'crb_theme_sitemap_page', 'Страница Карта сайта')
+        ->set_types([
+          [
+            'type' => 'post',
+            'post_type' => 'page',
+          ]
+        ])
+        ->set_max(1),
     ]);
 
   Container::make('post_meta', 'Главная')

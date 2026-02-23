@@ -159,10 +159,23 @@
   color: #000;
   text-decoration: none;
   letter-spacing: 0.05em;
+  position: relative;
 
   @media (--max-2xl) {
     font-size: 18px;
   }
+}
+
+.header-nav li.current-menu-parent a::after,
+.header-nav li.current-menu-item a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 3px;
+  background: currentColor;
 }
 
 .page-template-home .header-nav li a,
