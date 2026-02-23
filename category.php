@@ -49,12 +49,10 @@ $articles = new WP_Query($query_params);
           <?php echo term_description() ?>
         </div>
 
-        <div class="news-grid">
+        <div class="news-list">
           <?php while ($articles->have_posts()): ?>
             <?php $articles->the_post(); ?>
-            <div class="news-grid__item">
-              <?php get_template_part('partials/news-card'); ?>
-            </div>
+            <?php get_template_part('partials/news-card'); ?>
           <?php endwhile; ?>
           <?php wp_reset_postdata(); ?>
         </div>

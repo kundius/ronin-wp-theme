@@ -313,7 +313,7 @@ $news = new WP_Query([
                     <?php while ($news->have_posts()): ?>
                       <?php $news->the_post(); ?>
                       <div class="activity-embla__slide">
-                        <?php get_template_part('partials/news-card'); ?>
+                        <?php get_template_part('partials/activity-card'); ?>
                       </div>
                     <?php endwhile; ?>
                     <?php wp_reset_postdata(); ?>

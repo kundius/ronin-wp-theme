@@ -169,7 +169,7 @@ function register_carbon_fields_blocks()
       ]),
     ]);
 
-  Block::make('partials_services', 'Блок "Цены"')
+  Block::make('partials_prices', 'Блок "Цены"')
     ->add_fields([
       Field::make('separator', 'separator', 'Блок "Цены"'),
       Field::make('complex', 'prices', 'Цены')->add_fields([
@@ -184,6 +184,31 @@ function register_carbon_fields_blocks()
     ->set_icon('shortcode')
     ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
       get_template_part('partials/prices', null, [
+        'fields' => $fields,
+        'attributes' => $attributes,
+        'inner_blocks' => $inner_blocks,
+      ]);
+    });
+
+  Block::make('partials_schedule', 'Блок "Расписание"')
+    ->add_fields([
+      Field::make('separator', 'separator', 'Блок "Расписание"'),
+      Field::make('text', 'caption', 'Подпись'),
+      Field::make('complex', 'schedule', 'Расписание')->add_fields([
+        Field::make('textarea', 'time', 'Время')->set_rows(2)->set_width(50),
+        Field::make('textarea', 'monday', 'Понедельник')->set_rows(2)->set_width(25),
+        Field::make('textarea', 'tuesday', 'Вторник')->set_rows(2)->set_width(25),
+        Field::make('textarea', 'wednesday', 'Среда')->set_rows(2)->set_width(25),
+        Field::make('textarea', 'thursday', 'Четверг')->set_rows(2)->set_width(25),
+        Field::make('textarea', 'friday', 'Пятница')->set_rows(2)->set_width(25),
+        Field::make('textarea', 'saturday', 'Суббота')->set_rows(2)->set_width(25),
+      ]),
+    ])
+    ->set_category('layout')
+    ->set_mode('edit')
+    ->set_icon('shortcode')
+    ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+      get_template_part('partials/schedule', null, [
         'fields' => $fields,
         'attributes' => $attributes,
         'inner_blocks' => $inner_blocks,

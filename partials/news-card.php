@@ -1,19 +1,47 @@
-<article class="activity-card">
-  <figure class="activity-card__figure">
+<?php
+// $content = get_the_content('');
+// if (strpos($content, '<!--more-->') !== false) {
+//   $parts = explode('<!--more-->', $content);
+//   echo apply_filters('the_content', $parts[0]);
+// } else {
+//   echo wp_trim_words($content, 20, '...');
+// }
+?>
+<article class="news-card">
+  <figure class="news-card__figure">
     <?php if (has_post_thumbnail()): ?>
       <?php the_post_thumbnail('medium-crop'); ?>
     <?php else: ?>
-      <img src="" alt="">
+      <img src="<?php bloginfo('template_url'); ?>/assets/noimage.jpg" alt="">
     <?php endif; ?>
   </figure>
-  <div class="activity-card__body">
-    <div class="activity-card__content">
-      <a href="<?php the_permalink(); ?>" class="activity-card__title">
-        <?php the_title(); ?>
+  <div class="news-card__body">
+    <div class="news-card__date">
+      <?php echo get_the_date('d.m.Y'); ?>
+    </div>
+    <div class="news-card__title">
+      <?php the_title(); ?>
+    </div>
+    <div class="news-card__excerpt">
+      <?php
+      $content = get_the_content('');
+      if (strpos($content, '<!--more-->') !== false) {
+        $parts = explode('<!--more-->', $content);
+        echo apply_filters('the_content', $parts[0]);
+      } else {
+        echo wp_trim_words($content, 20, '...');
+      }
+      ?>
+    </div>
+    <div class="news-card__more">
+      <a href="<?php the_permalink(); ?>" class="btn-more">
+        <span class="btn-more__inner">
+          <span class="btn-more__text">
+            Подробнее
+          </span>
+          <span class="btn-more__icon icon icon-arrow-right"></span>
+        </span>
       </a>
-      <div class="activity-card__date">
-        <?php echo get_the_date('d.m.Y'); ?>
-      </div>
     </div>
   </div>
 </article>
