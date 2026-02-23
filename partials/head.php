@@ -7,6 +7,6 @@
 <meta name="cmsmagazine" content="ef9002bde22164e1bb8ca1b1793cf47b" />
 <meta itemprop="name" content="<?php bloginfo('blogname'); ?>" />
 <meta itemprop="description" content="<?php bloginfo('description'); ?>" />
-<meta name="yandex-verification" content="4090b779e52cd354" />
+<meta name="yandex-verification" content="cf9a34d39c24ee59" />
 
 <?php wp_head(); ?>
