@@ -50,6 +50,7 @@ function register_carbon_fields_blocks()
       Field::make('text', 'crb_theme_phone_time', 'Телефон / Время работы'),
       Field::make('text', 'crb_theme_email', 'E-mail'),
       Field::make('textarea', 'crb_theme_address', 'Адерс')->set_rows(2),
+      Field::make('text', 'crb_theme_vk', 'Ссылка на Вконтакте'),
       Field::make('text', 'crb_theme_telegram', 'Ссылка на телеграм'),
       Field::make('text', 'crb_theme_max', 'Ссылка на макс'),
       Field::make('complex', 'crb_theme_social', 'Соцсети')->add_fields([

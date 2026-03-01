@@ -7,9 +7,7 @@
         <div class="footer-primary__address">
           <?php echo carbon_get_theme_option('crb_theme_address'); ?>
         </div>
-      </div>
 
-      <div class="footer-primary__contacts">
         <div class="footer-primary__phone">
           <div class="footer-primary__phone-ico">
             <span class="icon icon-phone"></span>
@@ -18,8 +16,21 @@
             <?php echo carbon_get_theme_option('crb_theme_phone_number'); ?>
           </div>
         </div>
+      </div>
 
+      <div class="footer-primary__contacts">
         <div class="footer-primary__messengers">
+          <?php if ($crb_theme_vk = carbon_get_theme_option('crb_theme_vk')): ?>
+            <a href="<?php echo esc_attr($crb_theme_vk); ?>" class="footer-primary__vk">
+              <span class="footer-primary__vk-ico">
+                <span class="icon icon-vk"></span>
+              </span>
+              <span class="footer-primary__vk-val">
+                Вконтакте
+              </span>
+            </a>
+          <?php endif; ?>
+
           <?php if ($crb_theme_telegram = carbon_get_theme_option('crb_theme_telegram')): ?>
             <a href="<?php echo esc_attr($crb_theme_telegram); ?>" class="footer-primary__telegram">
               <span class="footer-primary__telegram-ico">
@@ -52,16 +63,8 @@
         ]); ?>
       </div>
 
-      <div class="footer-primary__divider-1"></div>
-
-      <?php if ($footer_widget = carbon_get_theme_option('crb_footer_widget')): ?>
-        <div class="footer-primary__vk-widget">
-          <?php echo $footer_widget; ?>
-        </div>
-      <?php endif; ?>
-
       <div class="footer-primary__fs">
-        <a href="#" class="footer-primary__fs-logo"></a>
+        <a href="https://sambo.ru" class="footer-primary__fs-logo" target="_blank"></a>
       </div>
 
       <div class="footer-primary__ending">
