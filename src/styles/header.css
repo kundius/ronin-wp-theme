@@ -179,8 +179,8 @@
   }
 }
 
-.header-nav > li.current-menu-parent > a::after,
-.header-nav > li.current-menu-item > a::after {
+.header-nav > li.current-menu-parent > a::before,
+.header-nav > li.current-menu-item > a::before {
   content: '';
   position: absolute;
   bottom: 0;
