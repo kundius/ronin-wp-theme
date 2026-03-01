@@ -1,6 +1,6 @@
 <?php
 $query_params = [
-  'post_type' => 'review',
+  'post_type' => 'photo_report',
   'orderby' => [
     'is_sticky' => 'DESC',
     'date' => 'DESC',
@@ -33,21 +33,21 @@ $articles = new WP_Query($query_params);
           </li>
           <li class="breadcrumbs__item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
             <span class="breadcrumbs__text" itemprop="item" aria-current="page">
-              <span itemprop="name">Отзывы</span>
+              <span itemprop="name">Фотоотчёты</span>
             </span>
             <meta itemprop="position" content="2">
           </li>
         </ol>
 
         <h1 class="page-title">
-          Отзывы
+          Фотоотчёты
         </h1>
 
-        <div class="reviews-grid">
+        <div class="activity-grid">
           <?php while ($articles->have_posts()): ?>
             <?php $articles->the_post(); ?>
-            <div class="reviews-grid__item">
-              <?php get_template_part('partials/review-card'); ?>
+            <div class="activity-grid__item">
+              <?php get_template_part('partials/photo-report-card'); ?>
             </div>
           <?php endwhile; ?>
           <?php wp_reset_postdata(); ?>

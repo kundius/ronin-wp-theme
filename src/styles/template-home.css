@@ -1119,6 +1119,7 @@
   transform: translateZ(0);
   min-width: 0;
   padding-left: var(--slide-spacing);
+  aspect-ratio: 8 / 6;
 
   @media (--max-xl) {
     flex: 0 0 calc(100% / 2);
@@ -1201,7 +1202,7 @@
   height: 74px;
   display: grid;
 
-  @media (--max-xl) {
+  @media (--max-2xl) {
     width: 56px;
     height: 56px;
   }
@@ -1283,14 +1284,25 @@ a.activity-card__title::after {
   }
 }
 
+.activity-embla__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 48px;
+
+  @media (--max-lg) {
+    margin-top: 32px;
+  }
+}
+
 .activity-embla__controls {
   display: flex;
-  margin: 48px auto 0;
   gap: 24px;
   width: min-content;
 
   @media (--max-lg) {
-    margin-top: 32px;
+    gap: 16px;
   }
 }
 

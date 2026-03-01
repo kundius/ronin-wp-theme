@@ -21,7 +21,7 @@
       <div class="footer-primary__contacts">
         <div class="footer-primary__messengers">
           <?php if ($crb_theme_vk = carbon_get_theme_option('crb_theme_vk')): ?>
-            <a href="<?php echo esc_attr($crb_theme_vk); ?>" class="footer-primary__vk">
+            <a href="<?php echo esc_attr($crb_theme_vk); ?>" class="footer-primary__vk" target="_blank">
               <span class="footer-primary__vk-ico">
                 <span class="icon icon-vk"></span>
               </span>
@@ -32,7 +32,7 @@
           <?php endif; ?>
 
           <?php if ($crb_theme_telegram = carbon_get_theme_option('crb_theme_telegram')): ?>
-            <a href="<?php echo esc_attr($crb_theme_telegram); ?>" class="footer-primary__telegram">
+            <a href="<?php echo esc_attr($crb_theme_telegram); ?>" class="footer-primary__telegram" target="_blank">
               <span class="footer-primary__telegram-ico">
                 <span class="icon icon-telegram"></span>
               </span>
@@ -43,7 +43,7 @@
           <?php endif; ?>
 
           <?php if ($crb_theme_telegram = carbon_get_theme_option('crb_theme_max')): ?>
-            <a href="<?php echo esc_attr($crb_theme_telegram); ?>" class="footer-primary__max">
+            <a href="<?php echo esc_attr($crb_theme_telegram); ?>" class="footer-primary__max" target="_blank">
               <span class="footer-primary__max-ico">
                 <span class="icon icon-max"></span>
               </span>

@@ -1021,3 +1021,27 @@ a.news-header__neighbor:hover {
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.activity-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 96px 0;
+
+  @media (--max-xl) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (--max-lg) {
+    margin-top: 64px;
+    margin-bottom: 64px;
+  }
+  @media (--max-md) {
+    grid-template-columns: 1fr;
+    margin-top: 36px;
+    margin-bottom: 36px;
+  }
+}
+
+.activity-grid__item {
+  aspect-ratio: 8 / 6;
+}
