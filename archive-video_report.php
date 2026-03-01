@@ -40,7 +40,7 @@ $articles = new WP_Query($query_params);
         </ol>
 
         <h1 class="page-title">
-          Фотоотчёты
+          Видеоотчёты
         </h1>
 
         <div class="activity-grid">
