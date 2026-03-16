@@ -248,11 +248,11 @@ $news = new WP_Query([
         <div class="activity-tabs">
           <div class="activity-tabs__nav">
             <label class="activity-tabs__label">
-              <input type="radio" name="activity-tabs">
+              <input type="radio" name="activity-tabs" checked>
               Новости
             </label>
             <label class="activity-tabs__label">
-              <input type="radio" name="activity-tabs" checked>
+              <input type="radio" name="activity-tabs">
               Фотоотчёты
             </label>
             <label class="activity-tabs__label">
