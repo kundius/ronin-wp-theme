@@ -287,6 +287,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
+
+  @media (--max-md) {
+    gap: var(--container-padding);
+  }
 }
 
 .about-content__photo {
@@ -368,9 +372,6 @@
   @media (--max-lg) {
     font-size: 20px;
   }
-  @media (--max-md) {
-    font-size: 18px;
-  }
 }
 
 .coaches__list {
@@ -406,7 +407,7 @@
   aspect-ratio: 1;
   margin-bottom: 24px;
 
-  @media (--max-md) {
+  @media (--max-lg) {
     margin-bottom: 16px;
   }
 }
@@ -423,9 +424,6 @@
 
   @media (--max-lg) {
     font-size: 20px;
-  }
-  @media (--max-md) {
-    font-size: 18px;
   }
 }
 
