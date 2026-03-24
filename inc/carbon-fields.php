@@ -157,6 +157,19 @@ function register_carbon_fields_blocks()
         Field::make('textarea', 'desc', 'Описание')->set_rows(2),
         Field::make('image', 'photo', 'Фото'),
       ]),
+    ])
+    ->add_tab('Запись', [
+      Field::make('textarea', 'registration_title', 'Заголовок')->set_rows(2),
+      Field::make('complex', 'registration_list', 'Шаги')->add_fields([
+        Field::make('textarea', 'text', 'Текст')->set_rows(4),
+      ]),
+    ])
+    ->add_tab('Вопросы', [
+      Field::make('textarea', 'faq_title', 'Заголовок')->set_rows(2),
+      Field::make('complex', 'faq_list', 'Вопросы')->add_fields([
+        Field::make('textarea', 'question', 'Вопрос')->set_rows(4),
+        Field::make('textarea', 'answer', 'Ответ')->set_rows(4),
+      ]),
     ]);
 
   Container::make('post_meta', 'Цены')

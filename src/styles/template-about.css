@@ -224,8 +224,6 @@
   grid-column: 1 / 2;
   min-width: 0;
 
-  @media (--max-2xl) {
-  }
   @media (--max-xl) {
     grid-column: 1 / 2;
   }
@@ -237,8 +235,6 @@
   display: flex;
   margin: 0;
 
-  @media (--max-2xl) {
-  }
   @media (--max-xl) {
     grid-column: 1 / 2;
   }
@@ -306,6 +302,19 @@
 }
 
 .coaches {
+  padding-top: 96px;
+  padding-bottom: 96px;
+  overflow: hidden;
+
+  @media (--max-lg) {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  @media (--max-md) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 }
 
 .coaches__main {
@@ -437,4 +446,106 @@
     font-size: 14px;
     margin-top: 8px;
   }
+}
+
+.about-info {
+  padding-top: 96px;
+  padding-bottom: 96px;
+  overflow: hidden;
+
+  @media (--max-lg) {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  @media (--max-md) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+.about-info__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 116px;
+  align-items: center;
+
+  @media (--max-2xl) {
+    gap: 80px;
+  }
+  @media (--max-xl) {
+    grid-template-columns: 1fr;
+  }
+  @media (--max-lg) {
+    gap: 64px;
+  }
+
+  @media (--max-md) {
+    gap: 48px;
+  }
+}
+
+.about-info__left {
+  grid-column: 1 / 2;
+  min-width: 0;
+
+  @media (--max-xl) {
+    grid-column: 1 / 2;
+  }
+}
+
+.about-info__right {
+  grid-column: 2 / 3;
+  min-width: 0;
+  display: flex;
+  margin: 0;
+
+  @media (--max-xl) {
+    grid-column: 1 / 2;
+  }
+  @media (--max-md) {
+    order: -1;
+  }
+}
+
+.about-registration {
+  border-radius: 30px;
+  background-color: rgba(246, 246, 246, 0.788);
+  padding: 96px 116px;
+}
+
+.about-registration__title {
+  font-size: 48px;
+  line-height: 1;
+  letter-spacing: 0.075em;
+  font-weight: 500;
+  margin: 0 0 64px;
+}
+
+.about-registration__rows {
+  counter-reset: num;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  margin: 0 0 64px;
+}
+
+.about-registration__row {
+  counter-increment: num;
+  position: relative;
+  padding-left: 40px;
+  font-size: 26px;
+  color: rgb(0, 0, 0);
+  line-height: 1.2;
+}
+
+.about-registration__row::before {
+  content: counter(num) '.';
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.about-registration__button {
+  margin-top: auto;
 }
