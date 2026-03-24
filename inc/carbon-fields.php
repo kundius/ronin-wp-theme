@@ -151,9 +151,9 @@ function register_carbon_fields_blocks()
     ])
     ->add_tab('Наши тренеры', [
       Field::make('textarea', 'coaches_title', 'Заголовок')->set_rows(2),
-      Field::make('textarea', 'coaches_desc', 'Описание')->set_rows(2),
+      Field::make('textarea', 'coaches_desc', 'Описание')->set_rows(4),
       Field::make('complex', 'coaches_list', 'Список')->add_fields([
-        Field::make('textarea', 'name', 'Имя')->set_rows(2),
+        Field::make('textarea', 'name', 'Имя')->set_rows(4),
         Field::make('textarea', 'desc', 'Описание')->set_rows(2),
         Field::make('image', 'photo', 'Фото'),
       ]),

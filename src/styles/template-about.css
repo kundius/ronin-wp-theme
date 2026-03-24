@@ -309,6 +309,16 @@
   border-radius: 30px;
   background: linear-gradient(to bottom, #cbdff0 0%, #eaf2f9 100%);
   position: relative;
+
+  @media (--max-2xl) {
+    padding: 48px 96px;
+  }
+  @media (--max-xl) {
+    padding: 40px 80px;
+  }
+  @media (--max-md) {
+    padding: 24px 48px;
+  }
 }
 
 .coaches__main::before {
@@ -320,7 +330,7 @@
   height: 695px;
   opacity: 0.08;
   right: -96px;
-  top: -68px;
+  top: -64px;
 }
 
 .coaches__title {
@@ -354,8 +364,9 @@
 .coaches__list {
   margin-top: 96px;
   display: grid;
-  gap: 96px;
-  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  grid-template-columns: repeat(5, minmax(180px, 220px));
+  justify-content: space-between;
 }
 
 .coaches-item {
