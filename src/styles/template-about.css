@@ -318,6 +318,7 @@
     padding: 48px 64px;
   }
   @media (--max-md) {
+    border-radius: 0;
     padding: calc(2 * var(--container-padding)) var(--container-padding);
     margin-left: calc(-1 * var(--container-padding));
     margin-right: calc(-1 * var(--container-padding));
@@ -387,8 +388,9 @@
     grid-template-columns: repeat(3, minmax(160px, 220px));
   }
   @media (--max-md) {
+    justify-content: space-around;
     margin-top: calc(2 * var(--container-padding));
-    gap: var(--container-padding);
+    column-gap: var(--container-padding);
     grid-template-columns: repeat(2, minmax(160px, 220px));
   }
 }
@@ -403,6 +405,10 @@
   width: 100%;
   aspect-ratio: 1;
   margin-bottom: 24px;
+
+  @media (--max-md) {
+    margin-bottom: 16px;
+  }
 }
 
 .coaches-item__photo img {
