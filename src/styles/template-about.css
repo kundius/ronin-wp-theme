@@ -188,12 +188,12 @@
   padding-bottom: 96px;
   overflow: hidden;
 
-  @media (--max-lg) {
+  @media (--max-xl) {
     padding-top: 64px;
     padding-bottom: 64px;
   }
 
-  @media (--max-md) {
+  @media (--max-lg) {
     padding-top: 40px;
     padding-bottom: 40px;
   }
@@ -304,12 +304,12 @@
   padding-bottom: 96px;
   overflow: hidden;
 
-  @media (--max-lg) {
+  @media (--max-xl) {
     padding-top: 64px;
     padding-bottom: 64px;
   }
 
-  @media (--max-md) {
+  @media (--max-lg) {
     padding-top: 40px;
     padding-bottom: 40px;
   }
@@ -451,12 +451,12 @@
   padding-bottom: 96px;
   overflow: hidden;
 
-  @media (--max-lg) {
+  @media (--max-xl) {
     padding-top: 64px;
     padding-bottom: 64px;
   }
 
-  @media (--max-md) {
+  @media (--max-lg) {
     padding-top: 40px;
     padding-bottom: 40px;
   }
@@ -496,6 +496,13 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+
+  @media (--max-3xl) {
+    padding: 64px 80px;
+  }
+  @media (--max-2xl) {
+    padding: 48px 64px;
+  }
 }
 
 .about-registration__title {
@@ -504,6 +511,11 @@
   letter-spacing: 0.075em;
   font-weight: 500;
   margin: 0 0 64px;
+
+  @media (--max-2xl) {
+    font-size: 40px;
+    margin-bottom: 48px;
+  }
 }
 
 .about-registration__rows {
@@ -512,6 +524,11 @@
   flex-direction: column;
   gap: 56px;
   margin: 0 0 64px;
+
+  @media (--max-2xl) {
+    gap: 40px;
+    margin-bottom: 48px;
+  }
 }
 
 .about-registration__row {
@@ -521,6 +538,10 @@
   font-size: 26px;
   color: rgb(0, 0, 0);
   line-height: 1.2;
+
+  @media (--max-2xl) {
+    font-size: 24px;
+  }
 }
 
 .about-registration__row::before {
@@ -536,6 +557,13 @@
 
 .about-faq {
   padding: 96px 116px;
+
+  @media (--max-3xl) {
+    padding: 64px 80px;
+  }
+  @media (--max-2xl) {
+    padding: 48px 64px;
+  }
 }
 
 .about-faq__title {
@@ -544,12 +572,21 @@
   letter-spacing: 0.075em;
   font-weight: 500;
   margin: 0 0 64px;
+
+  @media (--max-2xl) {
+    font-size: 40px;
+    margin-bottom: 48px;
+  }
 }
 
 .about-faq__rows {
   display: flex;
   flex-direction: column;
-  gap: 56px;
+  gap: 48px;
+
+  @media (--max-2xl) {
+    gap: 40px;
+  }
 }
 
 .about-faq__accordion {
@@ -564,7 +601,7 @@
   position: absolute;
   background: #000;
   left: 2px;
-  top: 16px;
+  top: 12px;
 }
 
 .about-faq__accordion::after {
@@ -574,7 +611,7 @@
   position: absolute;
   background: #000;
   left: 12px;
-  top: 6px;
+  top: 2px;
 }
 
 .about-faq__accordion[open]::after {
@@ -586,6 +623,10 @@
   color: rgb(0, 0, 0);
   line-height: 1.2;
   list-style: none;
+
+  @media (--max-2xl) {
+    font-size: 24px;
+  }
 }
 
 .about-faq__answer {
