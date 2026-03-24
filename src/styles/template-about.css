@@ -465,7 +465,6 @@
 .about-info__layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
 
   @media (--max-xl) {
     grid-template-columns: 1fr;
@@ -494,6 +493,9 @@
   border-radius: 30px;
   background-color: rgba(246, 246, 246, 0.788);
   padding: 96px 116px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .about-registration__title {
