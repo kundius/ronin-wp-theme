@@ -302,13 +302,16 @@
 }
 
 .coaches {
+}
+
+.coaches__main {
   padding: 64px 116px;
   border-radius: 30px;
   background: linear-gradient(to bottom, #cbdff0 0%, #eaf2f9 100%);
   position: relative;
 }
 
-.coaches::before {
+.coaches__main::before {
   content: '';
   display: block;
   position: absolute;
@@ -361,6 +364,7 @@
 .coaches-item__photo {
   width: 100%;
   border-radius: 50%;
+  overflow: hidden;
   width: 100%;
   aspect-ratio: 1;
   margin-bottom: 24px;
@@ -385,6 +389,7 @@
   text-align: center;
   color: #848484;
   font-size: 16px;
+  margin-top: 12px;
 
   @media (--max-md) {
     font-size: 12px;

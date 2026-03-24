@@ -86,39 +86,41 @@ Template Name: О клубе
 
     <section class="coaches">
       <div class="container">
-        <?php if ($coaches_title = carbon_get_the_post_meta('coaches_title')): ?>
-        <div class="coaches__title">
-          <?php echo nl2br($coaches_title); ?>
-        </div>
-        <?php endif; ?>
-        <?php if ($coaches_desc = carbon_get_the_post_meta('coaches_desc')): ?>
-        <div class="coaches__desc">
-          <?php echo nl2br($coaches_desc); ?>
-        </div>
-        <?php endif; ?>
-        <?php if ($coaches_list = carbon_get_the_post_meta('coaches_list')): ?>
-          <div class="coaches__list">
-            <?php foreach ($coaches_list as $item): ?>
-              <div class="coaches-item">
-                <?php if ($photo = $item['photo']): ?>
-                <div class="coaches-item__photo">
-                  <?php echo wp_get_attachment_image($photo, 'full'); ?>
-                </div>
-                <?php endif; ?>
-                <?php if ($name = $item['name']): ?>
-                <div class="coaches-item__name">
-                  <?php echo nl2br($name); ?>
-                </div>
-                <?php endif; ?>
-                <?php if ($desc = $item['desc']): ?>
-                <div class="coaches-item__desc">
-                  <?php echo nl2br($desc); ?>
-                </div>
-                <?php endif; ?>
-              </div>
-            <?php endforeach; ?>
+        <div class="coaches__main">
+          <?php if ($coaches_title = carbon_get_the_post_meta('coaches_title')): ?>
+          <div class="coaches__title">
+            <?php echo nl2br($coaches_title); ?>
           </div>
-        <?php endif; ?>
+          <?php endif; ?>
+          <?php if ($coaches_desc = carbon_get_the_post_meta('coaches_desc')): ?>
+          <div class="coaches__desc">
+            <?php echo nl2br($coaches_desc); ?>
+          </div>
+          <?php endif; ?>
+          <?php if ($coaches_list = carbon_get_the_post_meta('coaches_list')): ?>
+            <div class="coaches__list">
+              <?php foreach ($coaches_list as $item): ?>
+                <div class="coaches-item">
+                  <?php if ($photo = $item['photo']): ?>
+                  <div class="coaches-item__photo">
+                    <?php echo wp_get_attachment_image($photo, 'full'); ?>
+                  </div>
+                  <?php endif; ?>
+                  <?php if ($name = $item['name']): ?>
+                  <div class="coaches-item__name">
+                    <?php echo nl2br($name); ?>
+                  </div>
+                  <?php endif; ?>
+                  <?php if ($desc = $item['desc']): ?>
+                  <div class="coaches-item__desc">
+                    <?php echo nl2br($desc); ?>
+                  </div>
+                  <?php endif; ?>
+                </div>
+              <?php endforeach; ?>
+            </div>
+          <?php endif; ?>
+        </div>
       </div>
     </section>
 
