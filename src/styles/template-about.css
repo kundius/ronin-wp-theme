@@ -317,6 +317,11 @@
   @media (--max-xl) {
     padding: 48px 64px;
   }
+  @media (--max-md) {
+    padding: calc(2 * var(--container-padding)) var(--container-padding);
+    margin-left: calc(-1 * var(--container-padding));
+    margin-right: calc(-1 * var(--container-padding));
+  }
 }
 
 .coaches__main::before {
@@ -332,6 +337,10 @@
   top: -64px;
   z-index: -1;
   zoom: var(--global-scale, 1);
+
+  @media (--max-md) {
+    display: none;
+  }
 }
 
 .coaches__title {
@@ -375,7 +384,12 @@
   }
   @media (--max-xl) {
     margin-top: 48px;
-    grid-template-columns: repeat(3, minmax(180px, 220px));
+    grid-template-columns: repeat(3, minmax(160px, 220px));
+  }
+  @media (--max-md) {
+    margin-top: calc(2 * var(--container-padding));
+    gap: var(--container-padding);
+    grid-template-columns: repeat(2, minmax(160px, 220px));
   }
 }
 
@@ -417,8 +431,6 @@
 
   @media (--max-lg) {
     font-size: 14px;
-  }
-  @media (--max-md) {
-    font-size: 12px;
+    margin-top: 8px;
   }
 }
