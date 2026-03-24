@@ -355,8 +355,11 @@
 .coaches__desc {
   font-size: 24px;
 
-  @media (--max-md) {
+  @media (--max-lg) {
     font-size: 20px;
+  }
+  @media (--max-md) {
+    font-size: 18px;
   }
 }
 
@@ -398,8 +401,11 @@
   text-align: center;
   font-size: 24px;
 
-  @media (--max-md) {
+  @media (--max-lg) {
     font-size: 20px;
+  }
+  @media (--max-md) {
+    font-size: 18px;
   }
 }
 
@@ -409,6 +415,9 @@
   font-size: 16px;
   margin-top: 12px;
 
+  @media (--max-lg) {
+    font-size: 14px;
+  }
   @media (--max-md) {
     font-size: 12px;
   }
