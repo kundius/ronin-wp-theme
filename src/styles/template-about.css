@@ -309,8 +309,9 @@
   border-radius: 30px;
   background: linear-gradient(to bottom, #cbdff0 0%, #eaf2f9 100%);
   position: relative;
+  z-index: 1;
 
-  @media (--max-3xl) {
+  /* @media (--max-3xl) {
     padding: 56px 96px;
   }
   @media (--max-2xl) {
@@ -324,7 +325,7 @@
   }
   @media (--max-md) {
     padding: 24px 36px;
-  }
+  } */
 }
 
 .coaches__main::before {
@@ -332,11 +333,13 @@
   display: block;
   position: absolute;
   background: url('../images/р.png') no-repeat;
-  width: 567px;
-  height: 695px;
+  width: calc(100% * (567 / 1728));
+  aspect-ratio: 567 / 695;
+  /* height: 695px; */
   opacity: 0.08;
   right: -96px;
   top: -64px;
+  z-index: -1;
 }
 
 .coaches__title {
@@ -372,7 +375,7 @@
   grid-template-columns: repeat(5, minmax(180px, 220px));
   justify-content: space-between;
 
-  @media (--max-3xl) {
+  /* @media (--max-3xl) {
     margin-top: 56px;
   }
   @media (--max-2xl) {
@@ -386,7 +389,7 @@
   }
   @media (--max-md) {
     margin-top: 24px;
-  }
+  } */
 }
 
 .coaches-item {
