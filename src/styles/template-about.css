@@ -312,12 +312,10 @@
   z-index: 1;
 
   @media (--max-2xl) {
-    padding-left: 96px;
-    padding-right: 96px;
+    padding: 56px 96px;
   }
   @media (--max-xl) {
-    padding-left: 64px;
-    padding-right: 64px;
+    padding: 48px 64px;
   }
 }
 
@@ -365,7 +363,7 @@
 .coaches__list {
   margin-top: 96px;
   display: grid;
-  gap: 30px;
+  gap: 32px;
   grid-template-columns: repeat(5, minmax(180px, 220px));
   justify-content: space-between;
 
@@ -374,6 +372,7 @@
   }
   @media (--max-xl) {
     margin-top: 48px;
+    grid-template-columns: repeat(3, minmax(180px, 220px));
   }
 }
 
