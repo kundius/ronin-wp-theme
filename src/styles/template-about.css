@@ -188,7 +188,7 @@
   padding-bottom: 96px;
   overflow: hidden;
 
-  @media (--max-xl) {
+  @media (--max-2xl) {
     padding-top: 64px;
     padding-bottom: 64px;
   }
@@ -304,7 +304,7 @@
   padding-bottom: 96px;
   overflow: hidden;
 
-  @media (--max-xl) {
+  @media (--max-2xl) {
     padding-top: 64px;
     padding-bottom: 64px;
   }
@@ -451,7 +451,7 @@
   padding-bottom: 96px;
   overflow: hidden;
 
-  @media (--max-xl) {
+  @media (--max-2xl) {
     padding-top: 64px;
     padding-bottom: 64px;
   }
@@ -503,6 +503,9 @@
   @media (--max-2xl) {
     padding: 48px 64px;
   }
+  @media (--max-md) {
+    padding: 32px;
+  }
 }
 
 .about-registration__title {
@@ -515,6 +518,10 @@
   @media (--max-2xl) {
     font-size: 40px;
     margin-bottom: 48px;
+  }
+  @media (--max-md) {
+    font-size: 32px;
+    margin-bottom: 32px;
   }
 }
 
@@ -529,6 +536,10 @@
     gap: 40px;
     margin-bottom: 48px;
   }
+  @media (--max-md) {
+    gap: 32px;
+    margin-bottom: 32px;
+  }
 }
 
 .about-registration__row {
@@ -541,6 +552,10 @@
 
   @media (--max-2xl) {
     font-size: 24px;
+  }
+  @media (--max-md) {
+    font-size: 20px;
+    padding-left: 32px;
   }
 }
 
@@ -564,6 +579,9 @@
   @media (--max-2xl) {
     padding: 48px 64px;
   }
+  @media (--max-md) {
+    padding: 32px;
+  }
 }
 
 .about-faq__title {
@@ -577,6 +595,10 @@
     font-size: 40px;
     margin-bottom: 48px;
   }
+  @media (--max-md) {
+    font-size: 32px;
+    margin-bottom: 32px;
+  }
 }
 
 .about-faq__rows {
@@ -587,11 +609,18 @@
   @media (--max-2xl) {
     gap: 40px;
   }
+  @media (--max-md) {
+    gap: 32px;
+  }
 }
 
 .about-faq__accordion {
   position: relative;
   padding-left: 48px;
+
+  @media (--max-md) {
+    padding-left: 32px;
+  }
 }
 
 .about-faq__accordion::before {
@@ -602,6 +631,11 @@
   background: #000;
   left: 2px;
   top: 12px;
+
+  @media (--max-md) {
+    height: 4px;
+    width: 20px;
+  }
 }
 
 .about-faq__accordion::after {
@@ -612,6 +646,11 @@
   background: #000;
   left: 12px;
   top: 2px;
+
+  @media (--max-md) {
+    width: 4px;
+    height: 20px;
+  }
 }
 
 .about-faq__accordion[open]::after {
@@ -626,6 +665,9 @@
 
   @media (--max-2xl) {
     font-size: 24px;
+  }
+  @media (--max-md) {
+    font-size: 20px;
   }
 }
 
