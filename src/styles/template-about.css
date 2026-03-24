@@ -310,14 +310,20 @@
   background: linear-gradient(to bottom, #cbdff0 0%, #eaf2f9 100%);
   position: relative;
 
+  @media (--max-3xl) {
+    padding: 56px 96px;
+  }
   @media (--max-2xl) {
-    padding: 48px 96px;
+    padding: 48px 80px;
   }
   @media (--max-xl) {
-    padding: 40px 80px;
+    padding: 40px 64px;
+  }
+  @media (--max-lg) {
+    padding: 32px 48px;
   }
   @media (--max-md) {
-    padding: 24px 48px;
+    padding: 24px 36px;
   }
 }
 
@@ -344,12 +350,10 @@
     font-size: 56px;
   }
   @media (--max-lg) {
-    margin-bottom: 16px;
     font-size: 48px;
   }
   @media (--max-md) {
     font-size: 40px;
-    margin-bottom: 12px;
   }
 }
 
@@ -367,6 +371,22 @@
   gap: 30px;
   grid-template-columns: repeat(5, minmax(180px, 220px));
   justify-content: space-between;
+
+  @media (--max-3xl) {
+    margin-top: 56px;
+  }
+  @media (--max-2xl) {
+    margin-top: 48px;
+  }
+  @media (--max-xl) {
+    margin-top: 40px;
+  }
+  @media (--max-lg) {
+    margin-top: 32px;
+  }
+  @media (--max-md) {
+    margin-top: 24px;
+  }
 }
 
 .coaches-item {
