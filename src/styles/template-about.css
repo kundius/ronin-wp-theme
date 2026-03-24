@@ -358,7 +358,3 @@
   display: block;
   object-fit: cover;
 }
-
-.about-content__gallery img:first-child {
-  grid-column: span 2;
-}
