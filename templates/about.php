@@ -59,7 +59,11 @@ Template Name: О клубе
         <div class="about-content__layout">
           <div class="about-content__left">
             <h1 class="about-content__title">
+              <?php if ($extended_title = carbon_get_the_post_meta('extended_title')): ?>
+              <?php echo nl2br($extended_title); ?>
+              <?php else: ?>
               <?php the_title(); ?>
+              <?php endif; ?>
             </h1>
             <div class="about-content__text">
               <?php the_content(); ?>
@@ -70,7 +74,7 @@ Template Name: О клубе
             <div class="about-content__photos">
               <?php foreach ($photos as $photo): ?>
                 <div class="about-content__photo">
-                  <?php echo wp_get_attachment_image($photo, 'medium-crop'); ?>
+                  <?php echo wp_get_attachment_image($photo, 'medium-wide-crop'); ?>
                 </div>
               <?php endforeach; ?>
             </div>

@@ -15,6 +15,7 @@ add_theme_support('wp-block-styles');
 add_theme_support('post-thumbnails');
 add_theme_support('html5', ['comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'script', 'style']);
 add_image_size('medium-crop', 800, 600, true);
+add_image_size('medium-wide-crop', 480, 320, true);
 
 add_shortcode('partial', function ($atts, $content = null) {
   ob_start();

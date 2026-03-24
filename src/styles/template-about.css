@@ -108,6 +108,7 @@
   margin-bottom: 54px;
   margin-left: 64px;
   letter-spacing: 0.025em;
+  opacity: 0.8;
 
   @media (--max-xl) {
     font-size: 32px;
@@ -170,7 +171,6 @@
   margin-top: auto;
   margin-left: 64px;
   letter-spacing: 0.02em;
-  min-height: calc(1.2em * 4);
   opacity: 0.8;
 
   @media (--max-lg) {

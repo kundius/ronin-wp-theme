@@ -146,6 +146,7 @@ function register_carbon_fields_blocks()
       Field::make('text', 'intro_vartical', 'Вертикальная надпись'),
     ])
     ->add_tab('О клубе', [
+      Field::make('textarea', 'extended_title', 'Расширенный заголовок')->set_rows(2),
       Field::make('media_gallery', 'photos', 'Фото'),
     ]);
 
