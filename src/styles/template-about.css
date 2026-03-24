@@ -311,6 +311,10 @@
   position: relative;
   z-index: 1;
 
+  @media (--max-2xl) {
+    padding-left: 96px;
+    padding-right: 96px;
+  }
   /* @media (--max-3xl) {
     padding: 56px 96px;
   }
@@ -333,12 +337,12 @@
   display: block;
   position: absolute;
   background: url('../images/р.png') no-repeat;
-  width: calc(100% * (567 / 1728));
-  aspect-ratio: 567 / 695;
-  /* height: 695px; */
+  background-size: cover;
+  width: calc(567px * (1792px / var(--container-width)));
+  height: calc(695px * (1792px / var(--container-width)));
   opacity: 0.08;
-  right: -96px;
-  top: -64px;
+  right: calc(-96px * (1792px / var(--container-width)));
+  top: calc(-64px * (1792px / var(--container-width)));
   z-index: -1;
 }
 
@@ -375,6 +379,9 @@
   grid-template-columns: repeat(5, minmax(180px, 220px));
   justify-content: space-between;
 
+  @media (--max-2xl) {
+    margin-top: 64px;
+  }
   /* @media (--max-3xl) {
     margin-top: 56px;
   }
