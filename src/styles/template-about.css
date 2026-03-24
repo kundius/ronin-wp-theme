@@ -293,7 +293,7 @@
   display: flex;
 }
 
-.about-content__gallery img {
+.about-content__photo img {
   border-radius: 30px;
   display: block;
   object-fit: cover;
