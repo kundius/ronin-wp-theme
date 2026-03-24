@@ -138,7 +138,7 @@ Template Name: О клубе
               <div class="about-registration__rows">
                 <?php foreach ($registration_list as $item): ?>
                 <div class="about-registration__row">
-                  <?php echo nl2br($item); ?>
+                  <?php echo nl2br($item['text']); ?>
                 </div>
                 <?php endforeach; ?>
               </div>
