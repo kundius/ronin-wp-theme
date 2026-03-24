@@ -148,6 +148,15 @@ function register_carbon_fields_blocks()
     ->add_tab('О клубе', [
       Field::make('textarea', 'extended_title', 'Расширенный заголовок')->set_rows(2),
       Field::make('media_gallery', 'photos', 'Фото'),
+    ])
+    ->add_tab('Наши тренеры', [
+      Field::make('textarea', 'coaches_title', 'Заголовок')->set_rows(2),
+      Field::make('textarea', 'coaches_desc', 'Описание')->set_rows(2),
+      Field::make('complex', 'coaches_list', 'Список')->add_fields([
+        Field::make('textarea', 'name', 'Имя')->set_rows(2),
+        Field::make('textarea', 'desc', 'Описание')->set_rows(2),
+        Field::make('image', 'photo', 'Фото'),
+      ]),
     ]);
 
   Container::make('post_meta', 'Цены')
