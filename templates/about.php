@@ -31,12 +31,12 @@ Template Name: О клубе
           </div>
           <?php if ($intro_slogan = carbon_get_the_post_meta('intro_slogan')): ?>
             <div class="about-intro-content__slogan">
-              <?php echo $intro_slogan; ?>
+              <?php echo nl2br($intro_slogan); ?>
             </div>
           <?php endif; ?>
           <?php if ($intro_ideology = carbon_get_the_post_meta('intro_ideology')): ?>
             <div class="about-intro-content__ideology">
-              <?php echo $intro_ideology; ?>
+              <?php echo nl2br($intro_ideology); ?>
             </div>
           <?php endif; ?>
           <?php if ($intro_vartical = carbon_get_the_post_meta('intro_vartical')): ?>
@@ -67,16 +67,12 @@ Template Name: О клубе
           </div>
           <div class="about-content__right">
             <?php if ($photos = carbon_get_the_post_meta('photos')): ?>
-            <div class="about-content__gallery">
-              <?php if (!empty($photos[0])): ?>
-                <?php echo wp_get_attachment_image($photos[0], 'medium-crop'); ?>
-              <?php endif; ?>
-              <?php if (!empty($photos[1])): ?>
-                <?php echo wp_get_attachment_image($photos[1], 'medium-crop'); ?>
-              <?php endif; ?>
-              <?php if (!empty($photos[2])): ?>
-                <?php echo wp_get_attachment_image($photos[2], 'medium-crop'); ?>
-              <?php endif; ?>
+            <div class="about-content__photos">
+              <?php foreach ($photos as $photo): ?>
+                <div class="about-content__photo">
+                  <?php echo wp_get_attachment_image($photo, 'medium-crop'); ?>
+                </div>
+              <?php endforeach; ?>
             </div>
             <?php endif; ?>
           </div>

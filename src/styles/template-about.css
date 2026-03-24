@@ -36,72 +36,6 @@
   }
 }
 
-.about-intro-content::before {
-  --scale: 1;
-
-  content: '';
-  position: absolute;
-  border: calc(340px * var(--scale)) solid transparent;
-  border-bottom: calc(580px * var(--scale)) solid #948f8e;
-  border-top: none;
-  opacity: 0.53;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) rotate(30deg);
-  transform-origin: 50% 50%;
-  margin: calc(-48px * var(--scale)) 0 0 calc(440px * var(--scale));
-  z-index: -1;
-
-  @media (--max-3xl) {
-    --scale: 0.8;
-  }
-  @media (--max-2xl) {
-    --scale: 0.7;
-  }
-  @media (--max-xl) {
-    --scale: 0.6;
-  }
-  @media (--max-lg) {
-    --scale: 0.5;
-  }
-  @media (--max-md) {
-    --scale: 0.4;
-  }
-}
-
-.about-intro-content::after {
-  --scale: 1;
-
-  content: '';
-  position: absolute;
-  border: calc(340px * var(--scale)) solid transparent;
-  border-bottom: calc(580px * var(--scale)) solid #948f8e;
-  border-top: none;
-  opacity: 0.62;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) rotate(16deg);
-  transform-origin: 50% 50%;
-  margin: calc(-65px * var(--scale)) 0 0 calc(370px * var(--scale));
-  z-index: -1;
-
-  @media (--max-3xl) {
-    --scale: 0.8;
-  }
-  @media (--max-2xl) {
-    --scale: 0.7;
-  }
-  @media (--max-xl) {
-    --scale: 0.6;
-  }
-  @media (--max-lg) {
-    --scale: 0.5;
-  }
-  @media (--max-md) {
-    --scale: 0.4;
-  }
-}
-
 .about-intro__bg-image {
   position: absolute;
   left: 0;
@@ -234,12 +168,14 @@
   line-height: 1.2;
   font-weight: 500;
   margin-top: auto;
+  margin-left: 64px;
   letter-spacing: 0.02em;
   min-height: calc(1.2em * 4);
   opacity: 0.8;
 
   @media (--max-lg) {
     font-size: 20px;
+    margin-left: 0;
     filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.8));
   }
   @media (--max-md) {
@@ -347,14 +283,20 @@
   margin-top: 1.2em;
 }
 
-.about-content__gallery {
+.about-content__photos {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
+}
+
+.about-content__photo {
+  display: flex;
 }
 
 .about-content__gallery img {
   border-radius: 30px;
   display: block;
   object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
