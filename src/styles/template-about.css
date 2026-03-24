@@ -315,21 +315,10 @@
     padding-left: 96px;
     padding-right: 96px;
   }
-  /* @media (--max-3xl) {
-    padding: 56px 96px;
-  }
-  @media (--max-2xl) {
-    padding: 48px 80px;
-  }
   @media (--max-xl) {
-    padding: 40px 64px;
+    padding-left: 64px;
+    padding-right: 64px;
   }
-  @media (--max-lg) {
-    padding: 32px 48px;
-  }
-  @media (--max-md) {
-    padding: 24px 36px;
-  } */
 }
 
 .coaches__main::before {
@@ -338,12 +327,13 @@
   position: absolute;
   background: url('../images/р.png') no-repeat;
   background-size: cover;
-  width: calc(567px * (1792px / var(--container-width)));
-  height: calc(695px * (1792px / var(--container-width)));
+  width: 567px;
+  height: 695px;
   opacity: 0.08;
-  right: calc(-96px * (1792px / var(--container-width)));
-  top: calc(-64px * (1792px / var(--container-width)));
+  right: -96px;
+  top: -64px;
   z-index: -1;
+  zoom: var(--global-scale, 1);
 }
 
 .coaches__title {
@@ -382,21 +372,9 @@
   @media (--max-2xl) {
     margin-top: 64px;
   }
-  /* @media (--max-3xl) {
-    margin-top: 56px;
-  }
-  @media (--max-2xl) {
+  @media (--max-xl) {
     margin-top: 48px;
   }
-  @media (--max-xl) {
-    margin-top: 40px;
-  }
-  @media (--max-lg) {
-    margin-top: 32px;
-  }
-  @media (--max-md) {
-    margin-top: 24px;
-  } */
 }
 
 .coaches-item {

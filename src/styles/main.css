@@ -1,29 +1,35 @@
 :root {
+  --global-scale: 1;
   --container-width: 100%;
   --container-padding: 12px;
   --container-content: calc(var(--container-width) - (var(--container-padding) * 2));
 
   @media (--min-md) {
+    --global-scale: calc(768 / 1792);
     --container-width: 768px;
     --container-padding: 16px;
   }
 
   @media (--min-lg) {
+    --global-scale: calc(1024 / 1792);
     --container-width: 1024px;
     --container-padding: 16px;
   }
 
   @media (--min-xl) {
+    --global-scale: calc(1280 / 1792);
     --container-width: 1280px;
     --container-padding: 24px;
   }
 
   @media (--min-2xl) {
+    --global-scale: calc(1536 / 1792);
     --container-width: 1536px;
     --container-padding: 32px;
   }
 
   @media (--min-3xl) {
+    --global-scale: calc(1792 / 1792);
     --container-width: 1792px;
     --container-padding: 32px;
   }
