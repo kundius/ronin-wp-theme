@@ -134,7 +134,7 @@ Template Name: О клубе
                 <?php echo nl2br($registration_title); ?>
               </div>
               <?php endif; ?>
-              <?php if ($registration_list = carbon_get_the_post_meta('registration_list')): ?>
+              <?php if ($faq_list = carbon_get_the_post_meta('faq_list')): ?>
               <div class="about-registration__rows">
                 <?php foreach ($registration_list as $item): ?>
                 <div class="about-registration__row">
@@ -151,7 +151,27 @@ Template Name: О клубе
             </div>
           </div>
           <div class="about-info__right">
-
+            <div class="about-faq">
+              <?php if ($faq_title = carbon_get_the_post_meta('faq_title')): ?>
+              <div class="about-faq__title">
+                <?php echo nl2br($faq_title); ?>
+              </div>
+              <?php endif; ?>
+              <?php if ($faq_list = carbon_get_the_post_meta('faq_list')): ?>
+              <div class="about-faq__rows">
+                <?php foreach ($faq_list as $item): ?>
+                <details class="about-faq__accordion">
+                  <summary class="about-faq__question">
+                    <?php echo nl2br($item['question']); ?>
+                  </summary>
+                  <div class="about-faq__answer">
+                    <?php echo nl2br($item['answer']); ?>
+                  </div>
+                </details>
+                <?php endforeach; ?>
+              </div>
+              <?php endif; ?>
+            </div>
           </div>
         </div>
       </div>
