@@ -134,7 +134,7 @@ Template Name: О клубе
                 <?php echo nl2br($registration_title); ?>
               </div>
               <?php endif; ?>
-              <?php if ($faq_list = carbon_get_the_post_meta('faq_list')): ?>
+              <?php if ($faq_list = carbon_get_the_post_meta('registration_list')): ?>
               <div class="about-registration__rows">
                 <?php foreach ($registration_list as $item): ?>
                 <div class="about-registration__row">

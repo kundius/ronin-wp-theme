@@ -561,8 +561,8 @@
   height: 5px;
   position: absolute;
   background: #000;
-  left: 0;
-  top: 12px;
+  left: 2px;
+  top: 16px;
 }
 
 .about-faq__accordion::after {
@@ -572,7 +572,7 @@
   position: absolute;
   background: #000;
   left: 12px;
-  top: 0;
+  top: 6px;
 }
 
 .about-faq__accordion[open]::after {
@@ -583,6 +583,10 @@
   font-size: 26px;
   color: rgb(0, 0, 0);
   line-height: 1.2;
+}
+
+.about-faq__question::marker {
+  display: none;
 }
 
 .about-faq__answer {
