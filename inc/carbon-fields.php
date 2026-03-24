@@ -134,6 +134,21 @@ function register_carbon_fields_blocks()
       Field::make('text', 'about_url', 'Ссылка на подробнее'),
     ]);
 
+  Container::make('post_meta', 'О клубе')
+    ->where('post_type', '=', 'page')
+    ->where('post_template', '=', 'templates/about.php')
+    ->add_tab('Начальный экран', [
+      Field::make('image', 'intro_bg_image', 'Изображение'),
+      Field::make('textarea', 'intro_title', 'Заголовок')->set_rows(2),
+      Field::make('textarea', 'intro_desc', 'Описание')->set_rows(2),
+      Field::make('text', 'intro_slogan', 'Слоган'),
+      Field::make('text', 'intro_ideology', 'Идеология'),
+      Field::make('text', 'intro_vartical', 'Вертикальная надпись'),
+    ])
+    ->add_tab('О клубе', [
+      Field::make('media_gallery', 'photos', 'Фото')->set_help_text('Выберите три фотографии'),
+    ]);
+
   Container::make('post_meta', 'Цены')
     ->where('post_type', '=', 'page')
     ->where('post_template', '=', 'templates/prices.php')

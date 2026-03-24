@@ -76,6 +76,7 @@
   }
 }
 
+.page-template-about .header-logo,
 .page-template-home .header-logo,
 [data-sticky-header='active'] .header-logo,
 [data-mobile-menu='opened'] .header-logo {
@@ -191,6 +192,7 @@
   background: currentColor;
 }
 
+.page-template-about .header-nav > li > a,
 .page-template-home .header-nav > li > a,
 [data-sticky-header='active'] .header-nav > li > a,
 [data-mobile-menu='opened'] .header-nav > li > a {
@@ -202,6 +204,7 @@
   color: #2b2b2b;
 }
 
+.page-template-about .header-nav > li > a:hover,
 .page-template-home .header-nav > li > a:hover,
 [data-sticky-header='active'] .header-nav > li > a:hover,
 [data-mobile-menu='opened'] .header-nav > li > a:hover {
@@ -314,6 +317,7 @@
   }
 }
 
+.page-template-about .header-phone,
 .page-template-home .header-phone,
 [data-sticky-header='active'] .header-phone,
 [data-mobile-menu='opened'] .header-phone {
@@ -366,6 +370,7 @@
   }
 }
 
+.page-template-about .header-callback,
 .page-template-home .header-callback,
 [data-sticky-header='active'] .header-callback,
 [data-mobile-menu='opened'] .header-callback {
@@ -423,6 +428,7 @@
   }
 }
 
+.page-template-about .header-toggle,
 .page-template-home .header-toggle,
 [data-sticky-header='active'] .header-toggle,
 [data-mobile-menu='opened'] .header-toggle {

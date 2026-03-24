@@ -45,11 +45,11 @@ $news = new WP_Query([
               <?php echo nl2br($intro_title); ?>
             </div>
           <?php endif; ?>
-          <?php if ($intro_desc = carbon_get_the_post_meta('intro_desc')): ?>
-            <div class="intro-content__desc">
+          <div class="intro-content__desc">
+              <?php if ($intro_desc = carbon_get_the_post_meta('intro_desc')): ?>
               <?php echo nl2br($intro_desc); ?>
-            </div>
-          <?php endif; ?>
+              <?php endif; ?>
+          </div>
           <?php if ($intro_slogan = carbon_get_the_post_meta('intro_slogan')): ?>
             <div class="intro-content__slogan">
               <?php echo $intro_slogan; ?>

@@ -6,6 +6,7 @@ import './src/styles/header.css'
 import './src/styles/footer.css'
 import './src/styles/modal.css'
 import './src/styles/template-home.css'
+import './src/styles/template-about.css'
 
 import fslightbox from 'fslightbox'
 import { Mask, MaskInput } from 'maska'
