@@ -585,10 +585,7 @@
   font-size: 26px;
   color: rgb(0, 0, 0);
   line-height: 1.2;
-}
-
-.about-faq__question::marker {
-  display: none;
+  list-style: none;
 }
 
 .about-faq__answer {
