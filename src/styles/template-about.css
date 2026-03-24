@@ -635,6 +635,7 @@
   @media (--max-md) {
     height: 4px;
     width: 20px;
+    top: 10px;
   }
 }
 
@@ -650,6 +651,7 @@
   @media (--max-md) {
     width: 4px;
     height: 20px;
+    left: 10px;
   }
 }
 
@@ -676,4 +678,8 @@
   color: rgb(97, 97, 97);
   line-height: 1.2;
   margin-top: 12px;
+
+  @media (--max-md) {
+    font-size: 16px;
+  }
 }
