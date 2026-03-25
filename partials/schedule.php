@@ -64,7 +64,7 @@
         </div>
         <?php foreach ($schedule as $item): ?>
           <div class="elidehcs-table__td">
-            <div><?php echo nl2br($item['time']); ?></div>
+            <strong><?php echo nl2br($item['time']); ?></strong>
           </div>
         <?php endforeach; ?>
       </div>
