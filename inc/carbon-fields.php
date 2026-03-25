@@ -256,6 +256,45 @@ function register_carbon_fields_blocks()
       ]);
     });
 
+  Block::make('partials_directions_sections', 'Блок "Направления - разделы"')
+    ->add_fields([
+      Field::make('separator', 'separator', 'Блок "Направления - разделы"'),
+      Field::make('complex', 'sections', 'Разделы')->add_fields([
+        Field::make('textarea', 'title', 'Название')->set_rows(2),
+        Field::make('text', 'link', 'Ссылка'),
+        Field::make('image', 'photo', 'Изображение'),
+      ]),
+    ])
+    ->set_category('layout')
+    ->set_mode('edit')
+    ->set_icon('shortcode')
+    ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+      get_template_part('partials/directions-sections', null, [
+        'fields' => $fields,
+        'attributes' => $attributes,
+        'inner_blocks' => $inner_blocks,
+      ]);
+    });
+
+  Block::make('partials_directions_descriptions', 'Блок "Направления - описания"')
+    ->add_fields([
+      Field::make('separator', 'separator', 'Блок "Направления - описания"'),
+      Field::make('complex', 'descriptions', 'Описание')->add_fields([
+        Field::make('textarea', 'title', 'Название')->set_rows(2),
+        Field::make('rich_text', 'content', 'Описание'),
+      ])->set_max(2)->set_min(2)
+    ])
+    ->set_category('layout')
+    ->set_mode('edit')
+    ->set_icon('shortcode')
+    ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+      get_template_part('partials/directions-descriptions', null, [
+        'fields' => $fields,
+        'attributes' => $attributes,
+        'inner_blocks' => $inner_blocks,
+      ]);
+    });
+
   // Block::make('partials_news', 'Блок "Новости"')
   //   ->add_fields([
   //     Field::make('separator', 'separator', 'Блок "Новости"'),
