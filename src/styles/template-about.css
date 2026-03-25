@@ -51,6 +51,7 @@
   height: 100%;
   display: block;
   object-fit: cover;
+  object-position: 80% 100%;
 
   @media (--max-md) {
     opacity: 0.8;
