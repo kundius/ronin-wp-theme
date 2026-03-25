@@ -727,12 +727,14 @@ body {
 }
 
 .elidehcs-table {
-  border: 1px solid #e9e9e9;
-  border-radius: 20px;
-  overflow: hidden;
   display: grid;
   grid-template-columns: 12fr 10fr 10fr 10fr 10fr 10fr 10fr;
 
+  @media (--min-lg) {
+    border: 1px solid #e9e9e9;
+    border-radius: 20px;
+    overflow: hidden;
+  }
   @media (--max-lg) {
     grid-template-columns: 1fr;
     gap: 24px;
@@ -746,6 +748,11 @@ body {
 }
 
 .elidehcs-table__column {
+  @media (--max-lg) {
+    border: 1px solid #e9e9e9;
+    border-radius: 20px;
+    overflow: hidden;
+  }
 }
 
 .elidehcs-table__th {
@@ -762,9 +769,13 @@ body {
 
   @media (--max-2xl) {
     font-size: 20px;
+    min-height: 100px;
   }
   @media (--max-xl) {
     font-size: 18px;
+  }
+  @media (--max-lg) {
+    min-height: 48px;
   }
 }
 
@@ -781,9 +792,27 @@ body {
 
   @media (--max-2xl) {
     font-size: 20px;
+    min-height: 100px;
   }
   @media (--max-xl) {
     font-size: 18px;
+  }
+  @media (--max-lg) {
+    min-height: 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+  }
+}
+
+.elidehcs-table__td::before {
+  content: attr(data-title) ': ';
+  display: block;
+  width: 50%;
+  font-weight: 500;
+
+  @media (--min-lg) {
+    display: none;
   }
 }
 
