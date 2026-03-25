@@ -1771,11 +1771,6 @@ a.activity-card__title::after {
 
 .about-faq__accordion {
   position: relative;
-  padding-left: 48px;
-
-  @media (--max-md) {
-    padding-left: 32px;
-  }
 }
 
 .about-faq__accordion::before {
@@ -1786,6 +1781,7 @@ a.activity-card__title::after {
   background: #000;
   left: 2px;
   top: 12px;
+  pointer-events: none;
 
   @media (--max-md) {
     height: 4px;
@@ -1802,6 +1798,7 @@ a.activity-card__title::after {
   background: #000;
   left: 12px;
   top: 2px;
+  pointer-events: none;
 
   @media (--max-md) {
     width: 4px;
@@ -1819,12 +1816,14 @@ a.activity-card__title::after {
   color: rgb(0, 0, 0);
   line-height: 1.2;
   list-style: none;
+  padding-left: 48px;
 
   @media (--max-2xl) {
     font-size: 24px;
   }
   @media (--max-md) {
     font-size: 20px;
+    padding-left: 32px;
   }
 }
 
@@ -1833,9 +1832,11 @@ a.activity-card__title::after {
   color: rgb(97, 97, 97);
   line-height: 1.2;
   margin-top: 12px;
+  padding-left: 48px;
 
   @media (--max-md) {
     font-size: 16px;
+    padding-left: 32px;
   }
 }
 

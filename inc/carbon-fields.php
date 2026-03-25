@@ -44,7 +44,7 @@ function register_carbon_fields_blocks()
       Field::make('textarea', 'crb_seo_description', 'Описание'),
     ]);
 
-  Container::make('theme_options', 'Параметры')
+  Container::make('theme_options', 'Инфоблоки')
     ->add_tab('Общее', [
       Field::make('text', 'crb_theme_phone_number', 'Телефон / Номер'),
       Field::make('text', 'crb_theme_phone_time', 'Телефон / Время работы'),
