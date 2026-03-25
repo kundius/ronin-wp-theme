@@ -732,6 +732,17 @@ body {
   overflow: hidden;
   display: grid;
   grid-template-columns: 12fr 10fr 10fr 10fr 10fr 10fr 10fr;
+
+  @media (--max-lg) {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.elidehcs-table__column--time {
+  @media (--max-lg) {
+    display: none;
+  }
 }
 
 .elidehcs-table__column {
@@ -739,7 +750,7 @@ body {
 
 .elidehcs-table__th {
   background: #c9413c;
-  min-height: 100px;
+  min-height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -748,6 +759,13 @@ body {
   color: #fff;
   font-weight: 700;
   letter-spacing: 0.075em;
+
+  @media (--max-2xl) {
+    font-size: 20px;
+  }
+  @media (--max-xl) {
+    font-size: 18px;
+  }
 }
 
 .elidehcs-table__td {
@@ -758,8 +776,15 @@ body {
   font-size: 24px;
   color: #000;
   line-height: 1.2;
-  min-height: 100px;
+  min-height: 120px;
   border-top: 1px solid #e9e9e9;
+
+  @media (--max-2xl) {
+    font-size: 20px;
+  }
+  @media (--max-xl) {
+    font-size: 18px;
+  }
 }
 
 .news-list {

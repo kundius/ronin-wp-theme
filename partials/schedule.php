@@ -58,7 +58,7 @@
       </div>
     </div>
     <div class="elidehcs-table">
-      <div class="elidehcs-table__column">
+      <div class="elidehcs-table__column elidehcs-table__column--time">
         <div class="elidehcs-table__th">
 
         </div>
