@@ -188,40 +188,6 @@ Template Name: Главная
       </div>
     </section>
 
-    <section class="about">
-      <div class="container">
-        <div class="about__wrapper">
-          <div class="about__content">
-            <?php if ($about_title = carbon_get_the_post_meta('about_title')): ?>
-              <div class="about__title">
-                <?php echo nl2br($about_title); ?>
-              </div>
-            <?php endif; ?>
-            <?php if ($about_desc = carbon_get_the_post_meta('about_desc')): ?>
-              <div class="about__desc">
-                <?php echo $about_desc; ?>
-              </div>
-            <?php endif; ?>
-            <?php if ($about_url = carbon_get_the_post_meta('about_url')): ?>
-              <div class="about__more">
-                <a href="<?php echo esc_url($about_url); ?>" class="btn-more">
-                  <span class="btn-more__inner">
-                    <span class="btn-more__text">Подробнее</span>
-                    <span class="btn-more__icon icon icon-arrow-right"></span>
-                  </span>
-                </a>
-              </div>
-            <?php endif; ?>
-          </div>
-          <?php if ($about_photo = carbon_get_the_post_meta('about_photo')): ?>
-            <figure class="about__photo">
-              <?php echo wp_get_attachment_image($about_photo, 'full'); ?>
-            </figure>
-          <?php endif; ?>
-        </div>
-      </div>
-    </section>
-
     <div class="page-layout__body">
       <div class="container">
         <div class="page-content">

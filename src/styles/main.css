@@ -232,6 +232,7 @@ body {
 
 .page-content .activity,
 .page-content .coaches,
+.page-content .teaser-block,
 .page-content .content-block,
 .page-content .about-info,
 .page-content .directions-descriptions,
@@ -2092,4 +2093,121 @@ a.activity-card__title::after {
     font-size: 14px;
     margin-top: 8px;
   }
+}
+
+.teaser-block {
+  margin-top: 96px;
+  margin-bottom: 96px;
+
+  @media (--max-lg) {
+    margin-top: 64px;
+    margin-bottom: 64px;
+  }
+
+  @media (--max-md) {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+}
+
+.teaser-block__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 116px;
+  align-items: center;
+
+  @media (--max-2xl) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 80px;
+  }
+  @media (--max-xl) {
+    grid-template-columns: 1fr;
+  }
+  @media (--max-lg) {
+    gap: 64px;
+  }
+
+  @media (--max-md) {
+    gap: 48px;
+  }
+}
+
+.teaser-block__content {
+  grid-column: 1 / 2;
+  min-width: 0;
+
+  @media (--max-2xl) {
+    grid-column: 1 / 3;
+  }
+  @media (--max-xl) {
+    grid-column: 1 / 2;
+  }
+}
+
+.teaser-block__title {
+  font-size: 60px;
+  line-height: 1;
+  letter-spacing: 0.075em;
+  font-weight: 500;
+  margin: 0 0 64px;
+
+  @media (--max-xl) {
+    font-size: 56px;
+  }
+  @media (--max-lg) {
+    margin-bottom: 48px;
+    font-size: 48px;
+  }
+  @media (--max-md) {
+    font-size: 40px;
+    margin-bottom: 40px;
+  }
+}
+
+.teaser-block__desc {
+  font-size: 24px;
+
+  @media (--max-md) {
+    font-size: 20px;
+  }
+}
+
+.teaser-block__desc p {
+  margin: 0;
+}
+
+.teaser-block__desc * + p {
+  margin-top: 1.2em;
+}
+
+.teaser-block__more {
+  margin-top: 40px;
+
+  @media (--max-md) {
+    margin-top: 32px;
+  }
+}
+
+.teaser-block__photo {
+  grid-column: 2 / 4;
+  min-width: 0;
+  display: flex;
+  margin: 0;
+
+  @media (--max-2xl) {
+    grid-column: 3 / 6;
+  }
+  @media (--max-xl) {
+    grid-column: 1 / 2;
+  }
+  @media (--max-md) {
+    order: -1;
+  }
+}
+
+.teaser-block__photo img {
+  border-radius: 30px;
+  display: block;
+  width: 100%;
+  height: auto;
 }

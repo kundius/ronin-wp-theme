@@ -157,15 +157,6 @@ function register_carbon_fields_blocks()
       Field::make('textarea', 'intro_slogan', 'Слоган')->set_rows(2),
       Field::make('textarea', 'intro_ideology', 'Идеология')->set_rows(2),
       Field::make('text', 'intro_vartical', 'Вертикальная надпись'),
-    ])
-    ->add_tab('Наши тренеры', [
-      Field::make('textarea', 'coaches_title', 'Заголовок')->set_rows(2),
-      Field::make('textarea', 'coaches_desc', 'Описание')->set_rows(4),
-      Field::make('complex', 'coaches_list', 'Список')->add_fields([
-        Field::make('textarea', 'name', 'Имя')->set_rows(4),
-        Field::make('textarea', 'desc', 'Описание')->set_rows(2),
-        Field::make('image', 'photo', 'Фото'),
-      ]),
     ]);
 
   Container::make('post_meta', 'Цены')
@@ -313,9 +304,9 @@ function register_carbon_fields_blocks()
       ]);
     });
 
-  Block::make('partials_content_block', 'Блок "Текстовый медиа"')
+  Block::make('partials_content_block', 'Блок "Контент"')
     ->add_fields([
-      Field::make('separator', 'separator', 'Блок "Текстовый медиа"'),
+      Field::make('separator', 'separator', 'Блок "Контент"'),
       Field::make('textarea', 'title', 'Заголовок')->set_rows(2)->set_width(70),
       Field::make('select', 'title_level', 'Уровень заголовка')->set_options([
         '1' => 1,
@@ -330,6 +321,25 @@ function register_carbon_fields_blocks()
     ->set_icon('shortcode')
     ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
       get_template_part('partials/content-block', null, [
+        'fields' => $fields,
+        'attributes' => $attributes,
+        'inner_blocks' => $inner_blocks,
+      ]);
+    });
+
+  Block::make('partials_teaser_block', 'Блок "Тизер"')
+    ->add_fields([
+      Field::make('separator', 'separator', 'Блок "Тизер"'),
+      Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
+      Field::make('rich_text', 'desc', 'Описание'),
+      Field::make('image', 'photo', 'Фото'),
+      Field::make('text', 'url', 'Ссылка на подробнее'),
+    ])
+    ->set_category('layout')
+    ->set_mode('edit')
+    ->set_icon('shortcode')
+    ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+      get_template_part('partials/teaser-block', null, [
         'fields' => $fields,
         'attributes' => $attributes,
         'inner_blocks' => $inner_blocks,
