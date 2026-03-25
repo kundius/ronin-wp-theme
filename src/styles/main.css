@@ -1139,6 +1139,8 @@ a.news-header__neighbor:hover {
   position: relative;
   z-index: 1;
   padding: 96px 0 54px 116px;
+  margin-top: 64px;
+  margin-bottom: 64px;
 }
 
 .directions-descriptions__bg {
@@ -1195,14 +1197,23 @@ a.news-header__neighbor:hover {
 
 .directions-descriptions__title::after {
   content: '';
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
   background: currentColor;
   display: inline-block;
+  vertical-align: middle;
+  border-radius: 50%;
+  margin: 0 24px;
 }
 
 .directions-descriptions__content {
   font-size: 24px;
   color: rgb(255, 255, 255);
   line-height: 1.2;
+}
+
+.directions-descriptions__content em,
+.directions-descriptions__content i {
+  font-style: normal;
+  background: #014377;
 }

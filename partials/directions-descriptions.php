@@ -12,10 +12,10 @@
     </div>
     <div class="directions-descriptions__right">
       <div class="directions-descriptions__title">
-        <?php echo nl2br($descriptions[0]['title']); ?>
+        <?php echo nl2br($descriptions[1]['title']); ?>
       </div>
       <div class="directions-descriptions__content">
-        <?php echo $descriptions[0]['content']; ?>
+        <?php echo $descriptions[1]['content']; ?>
       </div>
     </div>
   </div>
