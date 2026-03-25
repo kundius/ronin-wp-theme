@@ -21,7 +21,7 @@
   </div>
   <div class="directions-descriptions__button">
     <button type="button" class="btn-primary" data-callback-button>
-      Записаться на занятие
+      Записаться на&nbsp;занятие
     </button>
   </div>
 </div>
