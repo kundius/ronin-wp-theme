@@ -1481,6 +1481,10 @@ a.activity-card__title::after {
 .directions-section {
   width: 260px;
   position: relative;
+
+  @media (--max-md) {
+    width: 144px;
+  }
 }
 
 .directions-section__image {
@@ -1494,6 +1498,11 @@ a.activity-card__title::after {
   background: #f6f6f6;
 }
 
+.directions-section__image img {
+  max-width: 100%;
+  height: auto;
+}
+
 .directions-section__title {
   text-align: center;
   margin-top: 48px;
@@ -1502,6 +1511,11 @@ a.activity-card__title::after {
   line-height: 1.2;
   display: block;
   text-decoration: none;
+
+  @media (--max-md) {
+    font-size: 18px;
+    margin-top: 24px;
+  }
 }
 
 .directions-section__title::before {
