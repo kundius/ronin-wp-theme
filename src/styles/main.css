@@ -1527,6 +1527,9 @@ a.activity-card__title::after {
   @media (--max-xl) {
     padding-right: 96px;
   }
+  @media (--max-lg) {
+    padding: 48px 64px;
+  }
 }
 
 .directions-descriptions__bg {
@@ -1573,6 +1576,9 @@ a.activity-card__title::after {
   }
   @media (--max-xl) {
     grid-template-columns: 1fr;
+  }
+  @media (--max-lg) {
+    gap: 48px;
   }
 }
 
