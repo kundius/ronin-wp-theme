@@ -295,6 +295,21 @@ function register_carbon_fields_blocks()
       ]);
     });
 
+  Block::make('partials_about_info', 'Блок "Информация и запись"')
+    ->add_fields([
+      Field::make('separator', 'separator', 'Блок "Информация и запись"'),
+    ])
+    ->set_category('layout')
+    ->set_mode('edit')
+    ->set_icon('shortcode')
+    ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+      get_template_part('partials/about-info', null, [
+        'fields' => $fields,
+        'attributes' => $attributes,
+        'inner_blocks' => $inner_blocks,
+      ]);
+    });
+
   // Block::make('partials_news', 'Блок "Новости"')
   //   ->add_fields([
   //     Field::make('separator', 'separator', 'Блок "Новости"'),

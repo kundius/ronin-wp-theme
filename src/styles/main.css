@@ -229,6 +229,7 @@ body {
   }
 }
 
+.page-content .about-info,
 .page-content .directions-descriptions,
 .page-content .directions-sections,
 .page-content .schedule-block,
@@ -1212,8 +1213,246 @@ a.news-header__neighbor:hover {
   line-height: 1.2;
 }
 
-.directions-descriptions__content em,
-.directions-descriptions__content i {
+.directions-descriptions__content em {
   font-style: normal;
   background: #014377;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.about-info {
+  margin-top: 96px;
+  margin-bottom: 96px;
+
+  @media (--max-2xl) {
+    margin-top: 64px;
+    margin-bottom: 64px;
+  }
+
+  @media (--max-lg) {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+}
+
+.about-info__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @media (--max-xl) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-info__left {
+  grid-column: 1 / 2;
+  min-width: 0;
+
+  @media (--max-xl) {
+    grid-column: 1 / 2;
+  }
+}
+
+.about-info__right {
+  grid-column: 2 / 3;
+  min-width: 0;
+
+  @media (--max-xl) {
+    grid-column: 1 / 2;
+  }
+}
+
+.about-registration {
+  border-radius: 30px;
+  background-color: rgba(246, 246, 246, 0.788);
+  padding: 96px 116px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  @media (--max-3xl) {
+    padding: 64px 80px;
+  }
+  @media (--max-2xl) {
+    padding: 48px 64px;
+  }
+  @media (--max-md) {
+    padding: 32px;
+  }
+}
+
+.about-registration__title {
+  font-size: 48px;
+  line-height: 1;
+  letter-spacing: 0.075em;
+  font-weight: 500;
+  margin: 0 0 64px;
+
+  @media (--max-2xl) {
+    font-size: 40px;
+    margin-bottom: 48px;
+  }
+  @media (--max-md) {
+    font-size: 32px;
+    margin-bottom: 32px;
+  }
+}
+
+.about-registration__rows {
+  counter-reset: num;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  margin: 0 0 64px;
+
+  @media (--max-2xl) {
+    gap: 40px;
+    margin-bottom: 48px;
+  }
+  @media (--max-md) {
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+}
+
+.about-registration__row {
+  counter-increment: num;
+  position: relative;
+  padding-left: 40px;
+  font-size: 26px;
+  color: rgb(0, 0, 0);
+  line-height: 1.2;
+
+  @media (--max-2xl) {
+    font-size: 24px;
+  }
+  @media (--max-md) {
+    font-size: 20px;
+    padding-left: 32px;
+  }
+}
+
+.about-registration__row::before {
+  content: counter(num) '.';
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.about-registration__button {
+  margin-top: auto;
+}
+
+.about-faq {
+  padding: 96px 116px;
+
+  @media (--max-3xl) {
+    padding: 64px 80px;
+  }
+  @media (--max-2xl) {
+    padding: 48px 64px;
+  }
+  @media (--max-md) {
+    padding: 32px;
+  }
+}
+
+.about-faq__title {
+  font-size: 48px;
+  line-height: 1;
+  letter-spacing: 0.075em;
+  font-weight: 500;
+  margin: 0 0 64px;
+
+  @media (--max-2xl) {
+    font-size: 40px;
+    margin-bottom: 48px;
+  }
+  @media (--max-md) {
+    font-size: 32px;
+    margin-bottom: 32px;
+  }
+}
+
+.about-faq__rows {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+
+  @media (--max-2xl) {
+    gap: 40px;
+  }
+  @media (--max-md) {
+    gap: 32px;
+  }
+}
+
+.about-faq__accordion {
+  position: relative;
+  padding-left: 48px;
+
+  @media (--max-md) {
+    padding-left: 32px;
+  }
+}
+
+.about-faq__accordion::before {
+  content: '';
+  width: 25px;
+  height: 5px;
+  position: absolute;
+  background: #000;
+  left: 2px;
+  top: 12px;
+
+  @media (--max-md) {
+    height: 4px;
+    width: 20px;
+    top: 10px;
+  }
+}
+
+.about-faq__accordion::after {
+  content: '';
+  width: 5px;
+  height: 25px;
+  position: absolute;
+  background: #000;
+  left: 12px;
+  top: 2px;
+
+  @media (--max-md) {
+    width: 4px;
+    height: 20px;
+    left: 10px;
+  }
+}
+
+.about-faq__accordion[open]::after {
+  display: none;
+}
+
+.about-faq__question {
+  font-size: 26px;
+  color: rgb(0, 0, 0);
+  line-height: 1.2;
+  list-style: none;
+
+  @media (--max-2xl) {
+    font-size: 24px;
+  }
+  @media (--max-md) {
+    font-size: 20px;
+  }
+}
+
+.about-faq__answer {
+  font-size: 18px;
+  color: rgb(97, 97, 97);
+  line-height: 1.2;
+  margin-top: 12px;
+
+  @media (--max-md) {
+    font-size: 16px;
+  }
 }
