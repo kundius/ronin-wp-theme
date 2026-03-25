@@ -310,6 +310,29 @@ function register_carbon_fields_blocks()
       ]);
     });
 
+  Block::make('partials_content_block', 'Блок "Текстовый медиа блок"')
+    ->add_fields([
+      Field::make('separator', 'separator', 'Блок "Текстовый медиа блок"'),
+      Field::make('textarea', 'title', 'Заголовок')->set_rows(2)->set_width(70),
+      Field::make('select', 'title_level', 'Уровень заголовка')->set_options([
+        '1' => 1,
+        '2' => 2,
+        '3' => 3,
+      ])->set_width(30),
+      Field::make('rich_text', 'content', 'Содержимое'),
+      Field::make('media_gallery', 'gallery', 'Фото'),
+    ])
+    ->set_category('layout')
+    ->set_mode('edit')
+    ->set_icon('shortcode')
+    ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+      get_template_part('partials/content-block', null, [
+        'fields' => $fields,
+        'attributes' => $attributes,
+        'inner_blocks' => $inner_blocks,
+      ]);
+    });
+
   // Block::make('partials_news', 'Блок "Новости"')
   //   ->add_fields([
   //     Field::make('separator', 'separator', 'Блок "Новости"'),

@@ -54,26 +54,26 @@ Template Name: О клубе
       <?php endif; ?>
     </section>
 
-    <section class="about-content">
+    <section class="content-block">
       <div class="container">
-        <div class="about-content__layout">
-          <div class="about-content__left">
-            <h1 class="about-content__title">
+        <div class="content-block__layout">
+          <div class="content-block__left">
+            <h1 class="content-block__title">
               <?php if ($extended_title = carbon_get_the_post_meta('extended_title')): ?>
               <?php echo nl2br($extended_title); ?>
               <?php else: ?>
               <?php the_title(); ?>
               <?php endif; ?>
             </h1>
-            <div class="about-content__text">
+            <div class="content-block__text">
               <?php the_content(); ?>
             </div>
           </div>
-          <div class="about-content__right">
+          <div class="content-block__right">
             <?php if ($photos = carbon_get_the_post_meta('photos')): ?>
-            <div class="about-content__photos">
+            <div class="content-block__photos">
               <?php foreach ($photos as $photo): ?>
-              <a class="about-content__photo" href="<?php echo esc_attr(wp_get_attachment_url($photo)); ?>" data-fslightbox="about">
+              <a class="content-block__photo" href="<?php echo esc_attr(wp_get_attachment_url($photo)); ?>" data-fslightbox="about">
                 <?php echo wp_get_attachment_image($photo, 'medium-wide-crop'); ?>
               </a>
               <?php endforeach; ?>
