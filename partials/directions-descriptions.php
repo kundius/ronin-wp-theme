@@ -1,5 +1,6 @@
 <?php if ($descriptions = $args['fields']['descriptions']): ?>
 <div class="directions-descriptions">
+  <div class="directions-descriptions__bg"></div>
   <div class="directions-descriptions__layout">
     <div class="directions-descriptions__left">
       <div class="directions-description-left">

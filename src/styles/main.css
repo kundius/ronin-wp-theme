@@ -229,6 +229,8 @@ body {
   }
 }
 
+.page-content .directions-descriptions,
+.page-content .directions-sections,
 .page-content .schedule-block,
 .page-content .prices {
   @media (--min-2xl) {
@@ -1088,6 +1090,16 @@ a.news-header__neighbor:hover {
   margin-bottom: 64px;
 }
 
+.directions-sections::before {
+  content: '';
+  display: block;
+}
+
+.directions-sections::after {
+  content: '';
+  display: block;
+}
+
 .directions-section {
   width: 260px;
   position: relative;
@@ -1124,34 +1136,84 @@ a.news-header__neighbor:hover {
 }
 
 .directions-descriptions {
+  position: relative;
+  z-index: 1;
+  padding: 96px 0 54px 116px;
+}
+
+.directions-descriptions__bg {
+  background-color: #c9413c;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: calc(100% / 6);
+}
+
+.directions-descriptions__bg::before {
+  content: '';
+  background: url('../images/directions-content.png') no-repeat calc(100% + 18px) -18px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  opacity: 0.25;
+  mix-blend-mode: screen;
+}
+
+.directions-descriptions__button {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
 }
 
 .directions-descriptions__layout {
+  display: grid;
+  gap: 116px;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .directions-descriptions__left {
+}
+
+.directions-descriptions__right {
 }
 
 .directions-description-left {
 }
 
 .directions-description-left__title {
+  font-size: 42px;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  line-height: 1.143;
+  margin-bottom: 40px;
 }
 
 .directions-description-left__content {
-}
-
-.directions-descriptions__right {
+  font-size: 24px;
+  color: rgb(255, 255, 255);
+  line-height: 1.2;
 }
 
 .directions-description-right {
+  border-radius: 30px;
+  background-color: rgb(158, 156, 156);
+  padding: 80px 96px;
 }
 
 .directions-description-right__title {
+  font-size: 42px;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  line-height: 1.143;
+  margin-bottom: 40px;
 }
 
 .directions-description-right__content {
-}
-
-.directions-descriptions__button {
+  font-size: 24px;
+  color: rgb(255, 255, 255);
+  line-height: 1.2;
 }
