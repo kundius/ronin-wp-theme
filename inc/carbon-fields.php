@@ -209,8 +209,8 @@ function register_carbon_fields_blocks()
   Container::make('post_meta', 'Тренер')
     ->where('post_type', '=', 'coach')
     ->add_fields([
-      Field::make('textarea', 'displayname', 'Отображаемое имя'),
-      Field::make('text', 'specialization', 'Специализация'),
+      Field::make('textarea', 'displayname', 'Отображаемое имя')->set_rows(4),
+      Field::make('textarea', 'description', 'Краткое описание')->set_rows(4),
     ]);
 
   Block::make('partials_prices', 'Блок "Цены"')
@@ -330,6 +330,23 @@ function register_carbon_fields_blocks()
     ->set_icon('shortcode')
     ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
       get_template_part('partials/content-block', null, [
+        'fields' => $fields,
+        'attributes' => $attributes,
+        'inner_blocks' => $inner_blocks,
+      ]);
+    });
+
+  Block::make('partials_content_block', 'Блок "Наши тренеры"')
+    ->add_fields([
+      Field::make('separator', 'separator', 'Блок "Наши тренеры"'),
+      Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
+      Field::make('textarea', 'description', 'Описание')->set_rows(4),
+    ])
+    ->set_category('layout')
+    ->set_mode('edit')
+    ->set_icon('shortcode')
+    ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+      get_template_part('partials/coaches', null, [
         'fields' => $fields,
         'attributes' => $attributes,
         'inner_blocks' => $inner_blocks,
