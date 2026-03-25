@@ -1530,6 +1530,12 @@ a.activity-card__title::after {
   @media (--max-lg) {
     padding: 48px 64px;
   }
+  @media (--max-md) {
+    margin-left: calc(var(--container-padding) * -1);
+    padding-left: calc(var(--container-padding) * 2);
+    margin-right: calc(var(--container-padding) * -1);
+    padding-right: calc(var(--container-padding) * 2);
+  }
 }
 
 .directions-descriptions__bg {
@@ -1563,6 +1569,10 @@ a.activity-card__title::after {
   display: flex;
   justify-content: center;
   margin-top: 32px;
+
+  @media (--max-lg) {
+    margin-top: 24px;
+  }
 }
 
 .directions-descriptions__layout {
@@ -1593,6 +1603,12 @@ a.activity-card__title::after {
   @media (--max-2xl) {
     padding: 64px 80px;
   }
+  @media (--max-lg) {
+    padding: 48px 64px;
+  }
+  @media (--max-md) {
+    padding: calc(var(--container-padding) * 2);
+  }
 }
 
 .directions-descriptions__title {
@@ -1605,6 +1621,10 @@ a.activity-card__title::after {
   @media (--max-2xl) {
     margin-bottom: 32px;
     font-size: 40px;
+  }
+  @media (--max-md) {
+    font-size: 32px;
+    margin-bottom: 24px;
   }
 }
 
@@ -1623,6 +1643,10 @@ a.activity-card__title::after {
   font-size: 24px;
   color: rgb(255, 255, 255);
   line-height: 1.2;
+
+  @media (--max-md) {
+    font-size: 20px;
+  }
 }
 
 .directions-descriptions__content em {
