@@ -1144,6 +1144,7 @@ a.news-header__neighbor:hover {
 .directions-descriptions__bg {
   background-color: #c9413c;
   position: absolute;
+  z-index: -1;
   left: 0;
   top: 0;
   bottom: 0;
@@ -1179,32 +1180,12 @@ a.news-header__neighbor:hover {
 }
 
 .directions-descriptions__right {
-}
-
-.directions-description-left {
-}
-
-.directions-description-left__title {
-  font-size: 42px;
-  color: rgb(255, 255, 255);
-  text-transform: uppercase;
-  line-height: 1.143;
-  margin-bottom: 40px;
-}
-
-.directions-description-left__content {
-  font-size: 24px;
-  color: rgb(255, 255, 255);
-  line-height: 1.2;
-}
-
-.directions-description-right {
   border-radius: 30px;
   background-color: rgb(158, 156, 156);
   padding: 80px 96px;
 }
 
-.directions-description-right__title {
+.directions-descriptions__title {
   font-size: 42px;
   color: rgb(255, 255, 255);
   text-transform: uppercase;
@@ -1212,7 +1193,15 @@ a.news-header__neighbor:hover {
   margin-bottom: 40px;
 }
 
-.directions-description-right__content {
+.directions-descriptions__title::after {
+  content: '';
+  width: 5px;
+  height: 5px;
+  background: currentColor;
+  display: inline-block;
+}
+
+.directions-descriptions__content {
   font-size: 24px;
   color: rgb(255, 255, 255);
   line-height: 1.2;
