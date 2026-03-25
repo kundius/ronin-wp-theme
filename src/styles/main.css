@@ -229,6 +229,14 @@ body {
   }
 }
 
+.page-content .schedule-block,
+.page-content .prices {
+  @media (--min-2xl) {
+    margin-left: calc((var(--container-width) - (var(--container-padding) * 2) - 1232px) / 2 * -1);
+    margin-right: calc((var(--container-width) - (var(--container-padding) * 2) - 1232px) / 2 * -1);
+  }
+}
+
 .page-content a {
   color: inherit;
 }
