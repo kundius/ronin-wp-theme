@@ -209,6 +209,7 @@ body {
 
 .page-layout__body {
   flex-grow: 1;
+  overflow: hidden;
 }
 
 .page-content {
@@ -229,6 +230,7 @@ body {
   }
 }
 
+.page-content .activity,
 .page-content .coaches,
 .page-content .content-block,
 .page-content .about-info,
