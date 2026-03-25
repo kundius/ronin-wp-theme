@@ -147,4 +147,5 @@ $news = new WP_Query([
       <?php endif; ?>
       <?php wp_reset_postdata(); ?>
     </div>
+  </div>
 </div>
