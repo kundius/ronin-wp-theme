@@ -336,7 +336,7 @@ function register_carbon_fields_blocks()
       ]);
     });
 
-  Block::make('partials_content_block', 'Блок "Наши тренеры"')
+  Block::make('partials_coaches', 'Блок "Наши тренеры"')
     ->add_fields([
       Field::make('separator', 'separator', 'Блок "Наши тренеры"'),
       Field::make('textarea', 'title', 'Заголовок')->set_rows(2),
