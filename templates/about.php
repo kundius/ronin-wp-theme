@@ -62,7 +62,6 @@ Template Name: О клубе
       </div>
     </div>
 
-    <?php get_template_part('partials/activity'); ?>
     <?php get_template_part('partials/contacts'); ?>
     <?php get_template_part('partials/footer'); ?>
   </div>
