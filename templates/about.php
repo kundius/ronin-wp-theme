@@ -54,6 +54,14 @@ Template Name: О клубе
       <?php endif; ?>
     </section>
 
+    <div class="page-layout__body">
+      <div class="container">
+        <div class="page-content">
+          <?php the_content(); ?>
+        </div>
+      </div>
+    </div>
+
     <section class="content-block">
       <div class="container">
         <div class="content-block__layout">
