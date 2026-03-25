@@ -57,6 +57,7 @@
   letter-spacing: 0.075em;
   border: none;
   line-height: 1;
+  width: 100%;
 }
 
 .modal-form__submit-button:hover {
@@ -113,7 +114,6 @@
   margin-right: auto;
   cursor: pointer;
   transition-duration: 0.15s;
-  border-radius: 12px;
 }
 
 .modal-form-success__close:hover {
@@ -173,6 +173,7 @@
   cursor: pointer;
   right: 6px;
   top: 6px;
+  border-radius: 12px;
 
   &::before {
     content: '\2715';

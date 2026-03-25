@@ -1524,6 +1524,9 @@ a.activity-card__title::after {
     padding-top: 64px;
     padding-left: 96px;
   }
+  @media (--max-xl) {
+    padding-right: 96px;
+  }
 }
 
 .directions-descriptions__bg {
@@ -1534,6 +1537,10 @@ a.activity-card__title::after {
   top: 0;
   bottom: 0;
   right: calc(100% / 6);
+
+  @media (--max-xl) {
+    right: 0;
+  }
 }
 
 .directions-descriptions__bg::before {
@@ -1564,6 +1571,9 @@ a.activity-card__title::after {
   @media (--max-2xl) {
     gap: 64px;
   }
+  @media (--max-xl) {
+    flex-direction: column;
+  }
 }
 
 .directions-descriptions__left {
@@ -1573,6 +1583,10 @@ a.activity-card__title::after {
   border-radius: 30px;
   background-color: rgb(158, 156, 156);
   padding: 80px 96px;
+
+  @media (--max-2xl) {
+    padding: 64px 80px;
+  }
 }
 
 .directions-descriptions__title {
