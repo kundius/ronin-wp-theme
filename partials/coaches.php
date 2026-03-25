@@ -29,9 +29,11 @@ $coaches = new WP_Query([
               </div>
             <?php endif; ?>
             
-            <div class="coaches-item__name">
-              <?php the_title(); ?>
-            </div>
+            <?php if ($displayname = carbon_get_the_post_meta('displayname')): ?>
+              <div class="coaches-item__name">
+                <?php echo nl2br($displayname); ?>
+              </div>
+            <?php endif; ?>
             
             <?php if ($description = carbon_get_the_post_meta('description')): ?>
               <div class="coaches-item__desc">
