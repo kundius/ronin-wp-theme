@@ -113,6 +113,7 @@
   margin-right: auto;
   cursor: pointer;
   transition-duration: 0.15s;
+  border-radius: 12px;
 }
 
 .modal-form-success__close:hover {
@@ -218,10 +219,15 @@
 
 .modal__dialog {
   position: relative;
-  padding: 32px;
+  padding: 48px;
   background-color: #fff;
   box-shadow: 0 3px 13px #8585bd2b;
   width: 480px;
+  border-radius: 30px;
+
+  @media (--max-md) {
+    padding: 24px;
+  }
 }
 
 @keyframes mmfadeIn {

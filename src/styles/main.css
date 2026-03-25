@@ -1519,6 +1519,11 @@ a.activity-card__title::after {
   padding: 96px 0 54px 116px;
   margin-top: 64px;
   margin-bottom: 64px;
+
+  @media (--max-2xl) {
+    padding-top: 64px;
+    padding-left: 96px;
+  }
 }
 
 .directions-descriptions__bg {
@@ -1554,6 +1559,11 @@ a.activity-card__title::after {
   display: grid;
   gap: 116px;
   grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+
+  @media (--max-2xl) {
+    gap: 64px;
+  }
 }
 
 .directions-descriptions__left {
@@ -1571,6 +1581,11 @@ a.activity-card__title::after {
   text-transform: uppercase;
   line-height: 1.143;
   margin-bottom: 40px;
+
+  @media (--max-2xl) {
+    margin-bottom: 32px;
+    font-size: 40px;
+  }
 }
 
 .directions-descriptions__title::after {
