@@ -209,6 +209,7 @@ function register_carbon_fields_blocks()
   Container::make('post_meta', 'Тренер')
     ->where('post_type', '=', 'coach')
     ->add_fields([
+      Field::make('textarea', 'displayname', 'Отображаемое имя'),
       Field::make('text', 'specialization', 'Специализация'),
     ]);
 
