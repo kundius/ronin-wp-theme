@@ -52,4 +52,29 @@ function register_post_types()
     'query_var' => false,
     'show_ui' => true,
   ]);
+
+  register_post_type('coach', [
+    'label' => null,
+    'labels' => [
+      'name' => 'Тренер',
+      'singular_name' => 'Тренер',
+      'add_new' => 'Добавить Тренер',
+      'add_new_item' => 'Добавить Тренер',
+      'edit_item' => 'Редактировать Тренер',
+      'new_item' => 'Новая Тренер',
+      'view_item' => 'Смотреть Тренер',
+      'search_items' => 'Искать Тренер',
+      'not_found' => 'Не найдено',
+      'not_found_in_trash' => 'Не найдено в корзине',
+      'parent_item_colon' => '',
+      'menu_name' => 'Тренеры',
+    ],
+    'description' => '',
+    'public' => true,
+    'has_archive' => true,
+    'menu_icon' => 'dashicons-media-document',
+    'supports' => ['title', 'thumbnail'],
+    'query_var' => false,
+    'show_ui' => true,
+  ]);
 }

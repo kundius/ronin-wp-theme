@@ -62,36 +62,6 @@ Template Name: О клубе
       </div>
     </div>
 
-    <section class="content-block">
-      <div class="container">
-        <div class="content-block__layout">
-          <div class="content-block__left">
-            <h1 class="content-block__title">
-              <?php if ($extended_title = carbon_get_the_post_meta('extended_title')): ?>
-              <?php echo nl2br($extended_title); ?>
-              <?php else: ?>
-              <?php the_title(); ?>
-              <?php endif; ?>
-            </h1>
-            <div class="content-block__text">
-              <?php the_content(); ?>
-            </div>
-          </div>
-          <div class="content-block__right">
-            <?php if ($photos = carbon_get_the_post_meta('photos')): ?>
-            <div class="content-block__photos">
-              <?php foreach ($photos as $photo): ?>
-              <a class="content-block__photo" href="<?php echo esc_attr(wp_get_attachment_url($photo)); ?>" data-fslightbox="about">
-                <?php echo wp_get_attachment_image($photo, 'medium-wide-crop'); ?>
-              </a>
-              <?php endforeach; ?>
-            </div>
-            <?php endif; ?>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="coaches">
       <div class="container">
         <div class="coaches__main">

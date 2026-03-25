@@ -158,10 +158,6 @@ function register_carbon_fields_blocks()
       Field::make('textarea', 'intro_ideology', 'Идеология')->set_rows(2),
       Field::make('text', 'intro_vartical', 'Вертикальная надпись'),
     ])
-    ->add_tab('О клубе', [
-      Field::make('textarea', 'extended_title', 'Расширенный заголовок')->set_rows(2),
-      Field::make('media_gallery', 'photos', 'Фото'),
-    ])
     ->add_tab('Наши тренеры', [
       Field::make('textarea', 'coaches_title', 'Заголовок')->set_rows(2),
       Field::make('textarea', 'coaches_desc', 'Описание')->set_rows(4),
@@ -208,6 +204,12 @@ function register_carbon_fields_blocks()
       Field::make('complex', 'videos', 'Видео')->add_fields([
         Field::make('text', 'url', 'Ссылка на Rutube'),
       ]),
+    ]);
+
+  Container::make('post_meta', 'Тренер')
+    ->where('post_type', '=', 'coach')
+    ->add_fields([
+      Field::make('text', 'specialization', 'Специализация'),
     ]);
 
   Block::make('partials_prices', 'Блок "Цены"')
@@ -310,9 +312,9 @@ function register_carbon_fields_blocks()
       ]);
     });
 
-  Block::make('partials_content_block', 'Блок "Текстовый медиа блок"')
+  Block::make('partials_content_block', 'Блок "Текстовый медиа"')
     ->add_fields([
-      Field::make('separator', 'separator', 'Блок "Текстовый медиа блок"'),
+      Field::make('separator', 'separator', 'Блок "Текстовый медиа"'),
       Field::make('textarea', 'title', 'Заголовок')->set_rows(2)->set_width(70),
       Field::make('select', 'title_level', 'Уровень заголовка')->set_options([
         '1' => 1,
