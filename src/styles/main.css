@@ -1572,7 +1572,7 @@ a.activity-card__title::after {
     gap: 64px;
   }
   @media (--max-xl) {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 }
 
