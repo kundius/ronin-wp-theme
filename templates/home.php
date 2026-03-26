@@ -58,6 +58,12 @@ Template Name: Главная
           <img src="<?php echo esc_attr(wp_get_attachment_url($intro_bg_image)); ?>" alt="">
         </div>
       <?php endif; ?>
+
+      <?php if ($intro_bg_video = carbon_get_the_post_meta('intro_bg_video')): ?>
+        <div class="intro__bg-video">
+          <video muted playsinline autoplay loop src="<?php echo esc_attr(wp_get_attachment_url($intro_bg_video)); ?>"></video>
+        </div>
+      <?php endif; ?>
     </section>
 
     <?php if ($intro_advantages = carbon_get_the_post_meta('intro_advantages')): ?>
