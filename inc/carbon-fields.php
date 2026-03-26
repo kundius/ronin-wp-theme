@@ -152,7 +152,8 @@ function register_carbon_fields_blocks()
     ->where('post_type', '=', 'page')
     ->where('post_template', '=', 'templates/about.php')
     ->add_tab('Начальный экран', [
-      Field::make('image', 'intro_bg_image', 'Изображение'),
+      Field::make('image', 'intro_bg_image', 'Фоновое изображение'),
+      Field::make('file', 'intro_bg_video', 'Фоновое видео'),
       Field::make('textarea', 'intro_title', 'Заголовок')->set_rows(2),
       Field::make('textarea', 'intro_desc', 'Описание')->set_rows(2),
       Field::make('textarea', 'intro_slogan', 'Слоган')->set_rows(2),

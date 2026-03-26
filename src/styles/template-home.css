@@ -140,6 +140,10 @@
   -o-object-fit: cover;
   object-fit: cover;
   opacity: 0.8;
+
+  @media (--max-md) {
+    opacity: 0.6;
+  }
 }
 
 .intro-content__title {
